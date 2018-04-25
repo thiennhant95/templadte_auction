@@ -1,0 +1,806 @@
+<!--
+<?php //require_once("./news.php");?>
+<?php //require_once("./common/include_disp.php"); ?>
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta charset="UTF-8" />
+<title><?= SEO_TITLE;?></title>
+<meta name="description" content="<?= SEO_DESCRIPTION;?>" />
+<meta name="keywords" content="<?= SEO_KEYWORDS;?>" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="format-detection" content="telephone=no" />
+<!-- CSS -->
+<link href="../css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/base.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/top.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/content.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/lightbox.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+<!-- JS -->
+<script type="text/javascript">window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script><!-- 上記CDNダウン時のフォールバック -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><!-- jQueryの読み込み -->
+<!-- <?php //echo DispBeforeHeadEndTag();?> -->
+</head>
+<body id="wrapper" class="personalouts">
+<!--<?php //echo DispHeader();?>-->
+<header>
+    <div class="main clearfix">
+        <h1 class="dishd_pc">{$cname('SEO_H1')}</h1>
+        <div class="flexrowbetween hdtop">
+            <div class="logo logotext"><a href="../"><img src="../common_img/logobox.jpg" alt="スマオク"><span>～オークション出品者専用ページ～</span></a></div>
+            <div class="txt_right clearfix">
+                <p class="text_top fz11 text_right lhnm">株式会社あいうえお様（T00246911）<br><a href="../">ログアウト</a></p>
+                <p class="text_red text_bold lhnm">本日の締切：14:00 <span>（残り時間：2時間34分12秒）</span></p>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul class="flexrowbetween">
+            <li class="dishd_sp"><a href="tel:06-7670-7744"><img src="../common_img/icon_tel.jpg" alt="tel:06-7670-7744" class="icon"></a></li>
+            <li class="dishd_sp"><a href="../contact/"><img src="../common_img/icon_mail.jpg" alt="CONTACT" class="icon"></a></li>
+            <li class="navpc">
+                <p class="menu dishd_sp"><img src="../common_img/icon_menu.jpg" alt="MENU" class="icon"></p>
+                <div class="navsub">
+                    <ul class="flexrowbetween submenu">
+                        <li class="ahover"><a href="../">TOP</a></li>
+                        <li class="ahover"><a href="../item/">オークション車両一覧</a></li>
+                        <li class="ahover"><a href="../favorite/">お気に入り一覧</a></li>
+                        <li class="ahover"><a href="../open/">入札中一覧</a></li>
+                        <li class="ahover"><a href="../close/">落札済一覧</a></li>
+                        <li class="ahover"><a href="../fail/">敗札一覧</a></li>
+                        <li class="ahover"><a href="../setting/">各種設定</a></li>
+                        <li class="ahover"><a href="../documents/">各種書類</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- End Top-->
+<section>
+    <article class="layout_detail">
+        <ul class="crumb">
+            <li class="home"><a href="../">TOP</a></li>
+            <li>オークション車両一覧（トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」）</li>
+        </ul>
+        <div class="titline">
+            <h3 class="fontyu">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</h3>
+        </div>
+        <!-- end sidebar -->
+        <div class="content_secon layout6page personal">
+            <div class="flexrowbetween boxcol3">
+                <div class="colimgslides">
+                    <div class="slide">
+                        <div id="slider" class="flexslider slides_container">
+                            <ul class="slides lightbox2">
+                                <li><a href="./images/listimg1.png" rel="lightbox[1]"><img src="./images/listimg1.png" class="lh00"></a></li>
+                                <li><a href="./images/listimg2.png" rel="lightbox[1]"><img src="./images/listimg2.png" class="lh00"></a></li>
+                                <li><a href="./images/listimg3.png" rel="lightbox[1]"><img src="./images/listimg3.png" class="lh00"></a></li>
+                                <li><a href="./images/listimg4.png" rel="lightbox[1]"><img src="./images/listimg4.png" class="lh00"></a></li>
+                                <li><a href="./images/listimg5.png" rel="lightbox[1]"><img src="./images/listimg5.png" class="lh00"></a></li>
+                                <li><a href="./images/listimg6.png" rel="lightbox[1]"><img src="./images/listimg6.png" class="lh00"></a></li>
+                                <li><a href="./images/listimg7.png" rel="lightbox[1]"><img src="./images/listimg7.png" class="lh00"></a></li>
+                                <li><a href="./images/listimg8.png" rel="lightbox[1]"><img src="./images/listimg8.png" class="lh00"></a></li>
+                            </ul>
+                        </div>
+                        <div id="carousel" class="flexslider">
+                            <ul class="slides pagination">
+                                <li><img src="./images/listimg1.png" /></li>
+                                <li><img src="./images/listimg2.png" /></li>
+                                <li><img src="./images/listimg3.png" /></li>
+                                <li><img src="./images/listimg4.png" /></li>
+                                <li><img src="./images/listimg5.png" /></li>
+                                <li><img src="./images/listimg6.png" /></li>
+                                <li><img src="./images/listimg7.png" /></li>
+                                <li><img src="./images/listimg8.png" /></li>
+                                <li><img src="./images/listimg1.png" /></li>
+                                <li><img src="./images/listimg2.png" /></li>
+                                <li><img src="./images/listimg3.png" /></li>
+                                <li><img src="./images/listimg4.png" /></li>
+                                <li><img src="./images/listimg5.png" /></li>
+                                <li><img src="./images/listimg6.png" /></li>
+                                <li><img src="./images/listimg7.png" /></li>
+                                <li><img src="./images/listimg8.png" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="coltxt coltxt_detail">
+                    <div class="block1 block1item">
+                        <div class="flexrowbetween">
+                            <table class="sttb01 coltb_style tile2">
+                                <tr>
+                                    <th>最高入札価格</th>
+                                    <td>￥1,500,000</td>
+                                </tr>
+                                <tr>
+                                    <th>（希望価格</th>
+                                    <td>￥1,200,000）</td>
+                                </tr>
+                                <tr>
+                                    <th>御社入札価格</th>
+                                    <td>￥1,500,000</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="flexrowbetween">
+                            <table class="sttb02 coltb_style tile">
+                                <tr>
+                                    <th>評価点</th>
+                                    <td>3.5点</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">（内装3.5点    外装3.5点）</td>
+                                </tr>
+                                <tr>
+                                    <th>出品番号</th>
+                                    <td>C1234</td>
+                                </tr>
+                                <tr>
+                                    <th>締切日時</th>
+                                    <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                                </tr>
+                            </table>
+                            <table class="sttb04 tile">
+                                <tr>
+                                    <th>年式</th>
+                                    <td>平成21年6月</td>
+                                </tr>
+                                <tr>
+                                    <th>型式</th>
+                                    <td>AB12</td>
+                                </tr>
+                                <tr>
+                                    <th>走行距離</th>
+                                    <td>12,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>排気量</th>
+                                    <td>3,000cc</td>
+                                </tr>
+                                <tr>
+                                    <th>色</th>
+                                    <td>ガンメタリック</td>
+                                </tr>
+                                <tr>
+                                    <th>場所</th>
+                                    <td>大阪府大阪市浪速区</td>
+                                </tr>
+                                <tr>
+                                    <th>出品番号</th>
+                                    <td>C1234</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- end block1 -->
+                    <div class="block2">
+                        <div class="boxcol2">
+                            <h4>◎ 査定表 <span>（画像クリックで拡大）</span></h4>
+                            <div class="imgsearch">
+                                <a href="./images/img1.png" rel="lightbox[2]" class="lightbox"><img src="./images/img1.png" alt="査定表（画像クリックで拡大）"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end block2 -->
+                </div>
+                <!-- end coltxt_detail -->
+            </div>
+            <div class="titbg"><h4 class="text_bold">オークション履歴</h4></div>
+            <div class="tbscroll">
+                <table class="tbstyle">
+                    <tr>
+                        <th class="w35">車名・グレード</th>
+                        <th>入札価格</th>
+                        <th class="w25">入札日時</th>
+                        <th>ステータス</th>
+                        <th>希望売却</th>
+                    </tr>
+                    <tr>
+                        <td>株式会社新日本中古車販売センター</td>
+                        <td>1,500,000</td>
+                        <td>2018/03/27 12:34:56</td>
+                        <td><p class="winningbid">落札</p></td>
+                        <td>
+                            <button class="bidding" id="bidding">応札</button>
+                            <div class="popbidding">
+                                <div class="messagepop">
+                                    <form method="post" id="new_message" action="/messages">
+                                        <p>株式会社新日本中古車販売センター様に<br>落札していただきますか？</p>
+                                        <ul>
+                                            <li class="completion"><a href="#" id="">OK</a></li>
+                                            <li class="cancel"><a class="close_bidding" href="/">キャンセル</a></li>
+                                        </ul>
+                                        <p class="close_bidding iconclose"><i class="fa fa-times-circle"></i></p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="popcompl">
+                                <div class="messagepop">
+                                    <form method="post" id="new_message" action="/messages">
+                                        <p>株式会社新日本中古車販売センター様が<br>落札されました。<br>後ほど、事務局から連絡が行きますので、<br>しばらくお待ちください。</p>
+                                        <ul>
+                                            <li class="completion"><a href="#">OK</a></li>
+                                        </ul>
+                                        <p class="close_compl iconclose"><i class="fa fa-times-circle"></i></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>株式会社新日本中古車販売センター</td>
+                        <td>1,500,000</td>
+                        <td>2018/03/27 12:34:56</td>
+                        <td><p class="winningbid"></p></td>
+                        <td>
+                            <button class="bidding">応札</button>
+                            <!-- <button class="bidding" id="bidding">応札</button>
+                            <div class="popbidding">
+                                <div class="messagepop">
+                                    <form method="post" id="new_message" action="/messages">
+                                        <p>株式会社新日本中古車販売センター様に<br>落札していただきますか？</p>
+                                        <ul>
+                                            <li class="completion"><a href="#" id="compl">OK</a></li>
+                                            <li class="cancel"><a class="close_bidding" href="/">キャンセル</a></li>
+                                        </ul>
+                                        <p class="close_bidding iconclose"><i class="fa fa-times-circle"></i></p>
+                                    </form>
+                                    <div class="popcompl">
+                                        <div class="messagepop">
+                                            <form method="post" id="new_message" action="/messages">
+                                                <p>株式会社新日本中古車販売センター様が<br>落札されました。<br>後ほど、事務局から連絡が行きますので、<br>しばらくお待ちください。</p>
+                                                <ul>
+                                                    <li class="completion"><a href="#">OK</a></li>
+                                                </ul>
+                                                <p class="close_compl iconclose"><i class="fa fa-times-circle"></i></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>株式会社新日本中古車販売センター</td>
+                        <td>1,500,000</td>
+                        <td>2018/03/27 12:34:56</td>
+                        <td><p class="winningbid"></p></td>
+                        <td>
+                            <button class="bidding">応札</button>
+                            <!-- <button class="bidding" id="bidding">応札</button>
+                            <div class="popbidding">
+                                <div class="messagepop">
+                                    <form method="post" id="new_message" action="/messages">
+                                        <p>株式会社新日本中古車販売センター様に<br>落札していただきますか？</p>
+                                        <ul>
+                                            <li class="completion"><a href="#" id="compl">OK</a></li>
+                                            <li class="cancel"><a class="close_bidding" href="/">キャンセル</a></li>
+                                        </ul>
+                                        <p class="close_bidding iconclose"><i class="fa fa-times-circle"></i></p>
+                                    </form>
+                                    <div class="popcompl">
+                                        <div class="messagepop">
+                                            <form method="post" id="new_message" action="/messages">
+                                                <p>株式会社新日本中古車販売センター様が<br>落札されました。<br>後ほど、事務局から連絡が行きますので、<br>しばらくお待ちください。</p>
+                                                <ul>
+                                                    <li class="completion"><a href="#">OK</a></li>
+                                                </ul>
+                                                <p class="close_compl iconclose"><i class="fa fa-times-circle"></i></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>株式会社新日本中古車販売センター</td>
+                        <td>1,500,000</td>
+                        <td>2018/03/27 12:34:56</td>
+                        <td><p class="winningbid"></p></td>
+                        <td>
+                            <button class="bidding">応札</button>
+                            <!-- <button class="bidding" id="bidding">応札</button>
+                            <div class="popbidding">
+                                <div class="messagepop">
+                                    <form method="post" id="new_message" action="/messages">
+                                        <p>株式会社新日本中古車販売センター様に<br>落札していただきますか？</p>
+                                        <ul>
+                                            <li class="completion"><a href="#" id="compl">OK</a></li>
+                                            <li class="cancel"><a class="close_bidding" href="/">キャンセル</a></li>
+                                        </ul>
+                                        <p class="close_bidding iconclose"><i class="fa fa-times-circle"></i></p>
+                                    </form>
+                                    <div class="popcompl">
+                                        <div class="messagepop">
+                                            <form method="post" id="new_message" action="/messages">
+                                                <p>株式会社新日本中古車販売センター様が<br>落札されました。<br>後ほど、事務局から連絡が行きますので、<br>しばらくお待ちください。</p>
+                                                <ul>
+                                                    <li class="completion"><a href="#">OK</a></li>
+                                                </ul>
+                                                <p class="close_compl iconclose"><i class="fa fa-times-circle"></i></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>株式会社新日本中古車販売センター</td>
+                        <td>1,500,000</td>
+                        <td>2018/03/27 12:34:56</td>
+                        <td><p class="winningbid"></p></td>
+                        <td>
+                            <button class="bidding">応札</button>
+                            <!-- <button class="bidding" id="bidding">応札</button>
+                            <div class="popbidding">
+                                <div class="messagepop">
+                                    <form method="post" id="new_message" action="/messages">
+                                        <p>株式会社新日本中古車販売センター様に<br>落札していただきますか？</p>
+                                        <ul>
+                                            <li class="completion"><a href="#" id="compl">OK</a></li>
+                                            <li class="cancel"><a class="close_bidding" href="/">キャンセル</a></li>
+                                        </ul>
+                                        <p class="close_bidding iconclose"><i class="fa fa-times-circle"></i></p>
+                                    </form>
+                                    <div class="popcompl">
+                                        <div class="messagepop">
+                                            <form method="post" id="new_message" action="/messages">
+                                                <p>株式会社新日本中古車販売センター様が<br>落札されました。<br>後ほど、事務局から連絡が行きますので、<br>しばらくお待ちください。</p>
+                                                <ul>
+                                                    <li class="completion"><a href="#">OK</a></li>
+                                                </ul>
+                                                <p class="close_compl iconclose"><i class="fa fa-times-circle"></i></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>株式会社新日本中古車販売センター</td>
+                        <td>1,500,000</td>
+                        <td>2018/03/27 12:34:56</td>
+                        <td><p class="winningbid"></p></td>
+                        <td>
+                            <button class="bidding">応札</button>
+                            <!-- <button class="bidding" id="bidding">応札</button>
+                            <div class="popbidding">
+                                <div class="messagepop">
+                                    <form method="post" id="new_message" action="/messages">
+                                        <p>株式会社新日本中古車販売センター様に<br>落札していただきますか？</p>
+                                        <ul>
+                                            <li class="completion"><a href="#" id="compl">OK</a></li>
+                                            <li class="cancel"><a class="close_bidding" href="/">キャンセル</a></li>
+                                        </ul>
+                                        <p class="close_bidding iconclose"><i class="fa fa-times-circle"></i></p>
+                                    </form>
+                                    <div class="popcompl">
+                                        <div class="messagepop">
+                                            <form method="post" id="new_message" action="/messages">
+                                                <p>株式会社新日本中古車販売センター様が<br>落札されました。<br>後ほど、事務局から連絡が行きますので、<br>しばらくお待ちください。</p>
+                                                <ul>
+                                                    <li class="completion"><a href="#">OK</a></li>
+                                                </ul>
+                                                <p class="close_compl iconclose"><i class="fa fa-times-circle"></i></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="titbg"><h4 class="text_bold">落札後のお手続き</h4></div>
+            <h5>お客さま情報の登録</h5>
+            <div class="assessor">
+                <table class="tbstyle tbstylesp">
+                    <tr>
+                        <th><span class="hinsu">必須</span> 名  前</th>
+                        <td><input type="text" value="阿部 薫" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 郵便番号</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="例）1122222"></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 都道府県</th>
+                        <td>
+                            <select name="" id="" class="w50per">
+                                <option disabled="" selected="" value=""> 都道府県を選択してください </option>
+                                <optgroup label="北海道・東北地方">
+                                  <option value="北海道">北海道</option>
+                                  <option value="青森県">青森県</option>
+                                  <option value="岩手県">岩手県</option>
+                                  <option value="秋田県">秋田県</option>
+                                  <option value="宮城県">宮城県</option>
+                                  <option value="山形県">山形県</option>
+                                  <option value="福島県">福島県</option>
+                                  </optgroup>
+                                  <optgroup label="関東地方">
+                                  <option value="東京都">東京都</option>
+                                  <option value="神奈川県">神奈川県</option>
+                                  <option value="埼玉県">埼玉県</option>
+                                  <option value="千葉県">千葉県</option>
+                                  <option value="茨城県">茨城県</option>
+                                  <option value="栃木県">栃木県</option>
+                                  <option value="群馬県">群馬県</option>
+                                  </optgroup>
+                                  <optgroup label="甲信越地方">
+                                  <option value="山梨県">山梨県</option>
+                                  <option value="長野県">長野県</option>
+                                  <option value="新潟県">新潟県</option>
+                                  </optgroup>
+                                  <optgroup label="東海地方">
+                                  <option value="静岡県">静岡県</option>
+                                  <option value="愛知県">愛知県</option>
+                                  <option value="岐阜県">岐阜県</option>
+                                  <option value="三重県">三重県</option>
+                                  </optgroup>
+                                  <optgroup label="北陸地方">
+                                  <option value="富山県">富山県</option>
+                                  <option value="石川県">石川県</option>
+                                  <option value="福井県">福井県</option>
+                                  </optgroup>
+                                  <optgroup label="近畿地方">
+                                  <option value="大阪府">大阪府</option>
+                                  <option value="京都府">京都府</option>
+                                  <option value="奈良県">奈良県</option>
+                                  <option value="滋賀県">滋賀県</option>
+                                  <option value="和歌山県">和歌山県</option>
+                                  <option value="兵庫県">兵庫県</option>
+                                  </optgroup>
+                                  <optgroup label="中国地方">
+                                  <option value="岡山県">岡山県</option>
+                                  <option value="広島県">広島県</option>
+                                  <option value="鳥取県">鳥取県</option>
+                                  <option value="島根県">島根県</option>
+                                  <option value="山口県">山口県</option>
+                                  </optgroup>
+                                  <optgroup label="四国地方">
+                                  <option value="香川県">香川県</option>
+                                  <option value="徳島県">徳島県</option>
+                                  <option value="愛媛県">愛媛県</option>
+                                  <option value="高知県">高知県</option>
+                                  </optgroup>
+                                  <optgroup label="九州・沖縄地方">
+                                  <option value="福岡県">福岡県</option>
+                                  <option value="佐賀県">佐賀県</option>
+                                  <option value="長崎県">長崎県</option>
+                                  <option value="大分県">大分県</option>
+                                  <option value="熊本県">熊本県</option>
+                                  <option value="宮崎県">宮崎県</option>
+                                  <option value="鹿児島県">鹿児島県</option>
+                                  <option value="沖縄県">沖縄県</option>
+                                  </optgroup>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 市町村・番地</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 建物・部屋番号</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> TEL</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="例）0322223333"></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> email</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="例）yamada@smart.com"></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 運転免許証番号</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="例）yamada@smart.com"></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 運転免許証番号</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="例）yamada@smart.com"></td>
+                    </tr>
+                    <tr>
+                        <th class="vertitop"><span class="hinsu">必須</span> 運転免許証写真</th>
+                        <td class="clearfix">
+                            <span class="pull_left"><input type="file" id="camera" accept="image/*" capture="camera" />
+                            <label tabindex="0" for="camera" class="input-camera w190 text_center">クリックして撮影</label></span>
+                            <span class="pull_left"><img src="./images/imgz.png" alt=""></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h5>必要書類の確認</h5>
+            <div>
+                <p>・弊社までお問い合わせください</p>
+                <p class="dis_pc teltxt"><i class="fa fa-phone-square"></i>06-1234-5678</p>
+                <p class="dis_sp teltxt"><a href="tel:06-1234-5678"><i class="fa fa-phone-square"></i>06-1234-5678</a></p>
+            </div>
+            
+            <h5>車両引取り情報の登録</h5>
+            <div class="assessor">
+                <table class="tbstyle tbstylesp">
+                    <tr>
+                        <th class="text_bold w100per" colspan="2"><span class="hinsu">必須</span> お引取場所を登録する</th>
+                    </tr>
+                    <tr>
+                        <td class="pl45">
+                            <p class="radio2"><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>お住まいの住所と同じ</span></label></p>
+                            <p class="radio2"><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>お住まいの住所と異なる</span></label></p>
+                            <p class="txtinput">
+                                <span>郵便番号</span>
+                                <input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="例）1122222">
+                            </p>
+                            <p class="txtinput">
+                                <span>都道府県</span>
+                                <select name="" id="" class="w50per">
+                                    <option disabled="" selected="" value=""> 都道府県を選択してください </option>
+                                <optgroup label="北海道・東北地方">
+                                  <option value="北海道">北海道</option>
+                                  <option value="青森県">青森県</option>
+                                  <option value="岩手県">岩手県</option>
+                                  <option value="秋田県">秋田県</option>
+                                  <option value="宮城県">宮城県</option>
+                                  <option value="山形県">山形県</option>
+                                  <option value="福島県">福島県</option>
+                                  </optgroup>
+                                  <optgroup label="関東地方">
+                                  <option value="東京都">東京都</option>
+                                  <option value="神奈川県">神奈川県</option>
+                                  <option value="埼玉県">埼玉県</option>
+                                  <option value="千葉県">千葉県</option>
+                                  <option value="茨城県">茨城県</option>
+                                  <option value="栃木県">栃木県</option>
+                                  <option value="群馬県">群馬県</option>
+                                  </optgroup>
+                                  <optgroup label="甲信越地方">
+                                  <option value="山梨県">山梨県</option>
+                                  <option value="長野県">長野県</option>
+                                  <option value="新潟県">新潟県</option>
+                                  </optgroup>
+                                  <optgroup label="東海地方">
+                                  <option value="静岡県">静岡県</option>
+                                  <option value="愛知県">愛知県</option>
+                                  <option value="岐阜県">岐阜県</option>
+                                  <option value="三重県">三重県</option>
+                                  </optgroup>
+                                  <optgroup label="北陸地方">
+                                  <option value="富山県">富山県</option>
+                                  <option value="石川県">石川県</option>
+                                  <option value="福井県">福井県</option>
+                                  </optgroup>
+                                  <optgroup label="近畿地方">
+                                  <option value="大阪府">大阪府</option>
+                                  <option value="京都府">京都府</option>
+                                  <option value="奈良県">奈良県</option>
+                                  <option value="滋賀県">滋賀県</option>
+                                  <option value="和歌山県">和歌山県</option>
+                                  <option value="兵庫県">兵庫県</option>
+                                  </optgroup>
+                                  <optgroup label="中国地方">
+                                  <option value="岡山県">岡山県</option>
+                                  <option value="広島県">広島県</option>
+                                  <option value="鳥取県">鳥取県</option>
+                                  <option value="島根県">島根県</option>
+                                  <option value="山口県">山口県</option>
+                                  </optgroup>
+                                  <optgroup label="四国地方">
+                                  <option value="香川県">香川県</option>
+                                  <option value="徳島県">徳島県</option>
+                                  <option value="愛媛県">愛媛県</option>
+                                  <option value="高知県">高知県</option>
+                                  </optgroup>
+                                  <optgroup label="九州・沖縄地方">
+                                  <option value="福岡県">福岡県</option>
+                                  <option value="佐賀県">佐賀県</option>
+                                  <option value="長崎県">長崎県</option>
+                                  <option value="大分県">大分県</option>
+                                  <option value="熊本県">熊本県</option>
+                                  <option value="宮崎県">宮崎県</option>
+                                  <option value="鹿児島県">鹿児島県</option>
+                                  <option value="沖縄県">沖縄県</option>
+                                  </optgroup>
+                                </select>
+                            </p>
+                            <p class="txtinput">
+                                <span>市町村・番地</span>
+                                <input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="">
+                            </p>
+                            <p class="txtinput">
+                                <span>建物・部屋番号</span>
+                                <input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="">
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <table class="tbstyle tbstylesp2">
+                    <tr>
+                        <th class="text_bold w100per" colspan="2"><span class="hinsu">必須</span> お引取希望日を登録する</th>
+                    </tr>
+                    <tr>
+                        <th class="thw6per text_right">・第1希望日：[日程]</th>
+                        <td class="thw94per">
+                            <input name="calendarselect{ContactID}" class="timeselect" type="date" id="calendar">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="thw6per text_right">[時間]</th>
+                        <td class="thw94per">
+                            <p class="radio"><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>指定なし</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>9:00～12:00</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>12:00～15:00</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>15:00～18:00</span></label>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="thw6per text_right">・第2希望日：[日程]</th>
+                        <td class="thw94per">
+                            <input name="calendarselect{ContactID}" class="timeselect" type="date" id="calendar">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="thw6per text_right">[時間]</th>
+                        <td class="thw94per">
+                            <p class="radio"><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>指定なし</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>9:00～12:00</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>12:00～15:00</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>15:00～18:00</span></label>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="thw6per text_right">・第3希望日：[日程]</th>
+                        <td class="thw94per">
+                            <input name="calendarselect{ContactID}" class="timeselect" type="date" id="calendar">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="thw6per text_right">[時間]</th>
+                        <td class="thw94per">
+                            <p class="radio"><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>指定なし</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>9:00～12:00</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>12:00～15:00</span></label>
+                            <label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>15:00～18:00</span></label>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <p class="alert">お引取前に必要書類が揃っていることが弊社にて確認できませんと、お引取りできない場合がございます。</p>
+            </div>
+            
+            <h5>口座情報の登録</h5>
+            <div class="assessor">
+                <table class="tbstyle tbstylesp">
+                    <tr>
+                        <th><span class="hinsu">必須</span> 銀行名</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 銀行コード</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 支店名</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 支店番号</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 建物・部屋番号</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 口座番号</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th><span class="hinsu">必須</span> 口座名義人</th>
+                        <td><input type="text" value="" name="" id="" size="" tabindex="" accesskey="" placeholder="例）ヤマダ タロウ ※カナ入力"></td>
+                    </tr>
+                </table>
+                
+                <div class="btnbtom2 text_center"><a href="#">登録情報を送信する ≫</a></div>
+            </div>
+            <!-- end boxitem -->
+            
+        </div>
+        <!-- end content_secon -->
+    </article>
+</section>
+
+    <!-- <?php //echo DispSide();?> -->
+<!-- end main -->
+
+<!--<?php //echo DispFooter();?>-->
+<footer>
+    <div class="main">
+        <div class="infoft flexrowbetween">
+            <div class="logoft"><a href="../"><img src="../common_img/logoft.png" alt="RAXUS CREATE INC."></a></div>
+            <div class="navft">
+                <h3 class="fontyu clpage text_bold">株式会社ラグザス・クリエイト</h3>
+                <ul>
+                    <li><a href="http://raxus-create.co.jp/index.html" target="_blank">コーポレートサイト<span>|</span></a></li>
+                    <li><a href="../">お問い合わせ<span>|</span></a></li>
+                    <li><a href="../images/kiyaku.pdf" target="_blank">利用規約<span>|</span></a></li>
+                    <li><a href="https://www.carnext-auction.com/about/" target="_blank">スマオク！とは</a></li>
+                    <li><a href="https://www.carnext-auction.com/About/anti_social" target="_blank">反社会的勢力排除宣言<span>|</span></a></li>
+                    <li><a href="https://www.carnext-auction.com/About/law" target="_blank">特定商取引法の表示</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page_top_cont noselect">
+            <div class="page_top">
+              <div class="to_top">
+                  <a href="#wrapper"><img src="../common_img/pagetop.png" alt="PAGE UP"></a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p class="text_center fontyu">Copyright(C) RAXUS CREATE INC.</p>
+    </div>
+</footer>
+<!-- End Footer-->
+<script src="../js/common.js" type="text/javascript"></script>
+<script src="../js/lightbox.js" type="text/javascript"></script>
+<script src="../js/tile.js" type="text/javascript"></script>
+<!-- <script src="../js/swap-image.js" type="text/javascript"></script> -->
+<script src="../js/demo.js" type="text/javascript"></script>
+<script src="../js/jquery.easing.js" type="text/javascript"></script>
+<script src="../js/jquery.mousewheel.js" type="text/javascript"></script>
+<script src="../js/jquery.flexslider.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        var viewportWidth = $(window).width();
+        if (viewportWidth < 769) {
+            $(".tile").tile(2);
+        } else {
+            $(".tile").tile(2);
+            $(".tile2").tile(2);
+            $(".tile3").tile(2);
+        }
+    });
+    $(window).load(function() {
+      $('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemMargin: 5,
+        itemWidth: 54,
+        asNavFor: '#slider'
+      });
+
+      $('#slider').flexslider({
+        animation: "slide",
+        controlNav: true,
+        animationLoop: false,
+        slideshow: true,
+        sync: "#carousel"
+      });
+    });
+    document.getElementById("datepickericon").onclick = function(e){
+        document.getElementById("calendar").focus();
+        // You could write code to toggle this
+    }
+</script>
+
+<!--
+<?php //echo DispBeforeBodyEndTag();?>
+<?php //echo DispAccesslog();?>
+-->
+</body>
+</html>

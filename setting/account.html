@@ -1,0 +1,172 @@
+<!--
+<?php //require_once("./news.php");?>
+<?php //require_once("./common/include_disp.php"); ?>
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta charset="UTF-8" />
+<title><?= SEO_TITLE;?></title>
+<meta name="description" content="<?= SEO_DESCRIPTION;?>" />
+<meta name="keywords" content="<?= SEO_KEYWORDS;?>" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="format-detection" content="telephone=no" />
+<!-- CSS -->
+<link href="../css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/base.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/top.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/content.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+<!-- JS -->
+<script type="text/javascript">window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script><!-- 上記CDNダウン時のフォールバック -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><!-- jQueryの読み込み -->
+<!-- <?php //echo DispBeforeHeadEndTag();?> -->
+</head>
+<body id="wrapper">
+<!--<?php //echo DispHeader();?>-->
+<header>
+    <div class="main clearfix">
+        <h1 class="dishd_pc">{$cname('SEO_H1')}</h1>
+        <div class="flexrowbetween hdtop">
+            <div class="logo"><a href="../"><img src="../common_img/logo.jpg" alt="スマオク ユーザ直取引プロ査定員査定"></a></div>
+            <div class="txt_right clearfix">
+                <p class="text_top fz11 text_right lhnm">株式会社あいうえお様<br>（T00246911）<br><a href="../">ログアウト</a></p>
+                <p class="text_red text_bold lhnm">本日の締切：14:00 <span>（残り時間：2時間34分12秒）</span></p>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul class="flexrowbetween">
+            <li class="dishd_sp"><a href="tel:06-7670-7744"><img src="../common_img/icon_tel.jpg" alt="tel:06-7670-7744" class="icon"></a></li>
+            <li class="dishd_sp"><a href="../contact/"><img src="../common_img/icon_mail.jpg" alt="CONTACT" class="icon"></a></li>
+            <li class="navpc">
+                <p class="menu dishd_sp"><img src="../common_img/icon_menu.jpg" alt="MENU" class="icon"></p>
+                <div class="navsub">
+                    <ul class="flexrowbetween submenu">
+                        <li class="ahover"><a href="../">TOP</a></li>
+                        <li class="ahover"><a href="../item/">オークション車両一覧</a></li>
+                        <li class="ahover"><a href="../favorite/">お気に入り一覧</a></li>
+                        <li class="ahover"><a href="../open/">入札中一覧</a></li>
+                        <li class="ahover"><a href="../close/">落札済一覧</a></li>
+                        <li class="ahover"><a href="../fail/">敗札一覧</a></li>
+                        <li class="ahover active"><a href="../setting/">各種設定</a></li>
+                        <li class="ahover"><a href="../documents/">各種書類</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- End Top-->
+<section class="secon_page setting">
+    <article>
+        <ul class="crumb">
+            <li class="home"><a href="../">TOP</a></li>
+            <li>各種設定（口座情報）</li>
+        </ul>
+        <div class="titline">
+            <h3 class="fontyu">各種設定（口座情報）</h3>
+        </div>
+        <div class="content_secon2">
+            <div class="talbew">
+                <ul class="list flexrowbetween">
+                    <li><a href="./password.html">パスワード設定</a></li>
+                    <li><a href="./mail.html">メールアドレス・<span>請求書受取方法設定</span></a></li>
+                    <li class="active"><a href="./account.html">口座情報</a></li>
+                </ul>
+                <table class="tbstyle">
+                    <tr>
+                        <th>銀行名</th>
+                        <td><input type="text" value="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th>銀行コード（半角4桁）</th>
+                        <td><input type="text" value="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th>支店名</th>
+                        <td><input type="text" value="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th>銀行コード（半角3桁）</th>
+                        <td><input type="text" value="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th>口座種別</th>
+                        <td>
+                            <select name="" id="">
+                                <option value='普通'>普通</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>口座番号（半角7桁）</th>
+                        <td><input type="text" value="" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <th>口座名義人名（カナ）</th>
+                        <td><input type="text" value="" placeholder=""></td>
+                    </tr>
+                </table>
+                <p class="text_center"><input type="button" value="設定する" class="bt_confirm"></p>
+            </div>
+        </div>
+        <!-- end content_secon -->
+    </article>
+</section>
+
+    <!-- <?php //echo DispSide();?> -->
+<!-- end main -->
+
+<!--<?php //echo DispFooter();?>-->
+<footer>
+    <div class="main">
+        <div class="infoft flexrowbetween">
+            <div class="logoft"><a href="../"><img src="../common_img/logoft.png" alt="RAXUS CREATE INC."></a></div>
+            <div class="navft">
+                <h3 class="fontyu clpage text_bold">株式会社ラグザス・クリエイト</h3>
+                <ul>
+                    <li><a href="http://raxus-create.co.jp/index.html" target="_blank">コーポレートサイト<span>|</span></a></li>
+                    <li><a href="../">お問い合わせ<span>|</span></a></li>
+                    <li><a href="../images/kiyaku.pdf" target="_blank">利用規約<span>|</span></a></li>
+                    <li><a href="https://www.carnext-auction.com/about/" target="_blank">スマオク！とは</a></li>
+                    <li><a href="https://www.carnext-auction.com/About/anti_social" target="_blank">反社会的勢力排除宣言<span>|</span></a></li>
+                    <li><a href="https://www.carnext-auction.com/About/law" target="_blank">特定商取引法の表示</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page_top_cont noselect">
+            <div class="page_top">
+              <div class="to_top">
+                  <a href="#wrapper"><img src="../common_img/pagetop.png" alt="PAGE UP"></a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p class="text_center fontyu">Copyright(C) RAXUS CREATE INC.</p>
+    </div>
+</footer>
+<!-- End Footer-->
+<script src="../js/common.js" type="text/javascript"></script>
+<script src="../js/tile.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        var viewportWidth = $(window).width();
+        if (viewportWidth < 769) {
+            $(".sidebar h3").addClass("ac_title");
+            $(".sidebar .textbox").addClass("ac_con");
+        } else {
+            $(".sidebar h3").removeClass("ac_title");
+            $(".sidebar .textbox").removeClass("ac_con");
+        }
+    });
+</script>
+<!--
+<?php //echo DispBeforeBodyEndTag();?>
+<?php //echo DispAccesslog();?>
+-->
+</body>
+</html>

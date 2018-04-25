@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="ja">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>(9) 社内システム: 業者対応地域 </title>
+<link src="../favicon.ico" type="image/x-icon" rel="icon" />
+<link src="../favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.10.3.custom.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/teisei.css" />
+<link rel="stylesheet" type="text/css" href="../css/default.css" />
+<link rel="stylesheet" type="text/css" href="../css/body.css" />
+<link rel="stylesheet" type="text/css" href="../css/autocomplete.css" />
+<link rel="stylesheet" type="text/css" href="../css/prefSelectExtension.css" />
+<link rel="stylesheet" type="text/css" href="../css/mileageSelectExtension.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.4.1/hint.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/darktooltip.min.css" />
+
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.datepicker-ja.js"></script>
+<script type="text/javascript" src="../js/HolidayChk.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/prefSelectExtension.js"></script>
+<script type="text/javascript" src="../js/valueconvertor.js"></script>
+<script type="text/javascript" src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../js/jquery.disableOnSubmit.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    $(function() {
+        $('#trader_name').autocomplete({
+            source: '/crm/traders/autoCompleteTraderName',
+            disabled: false,
+            autoFocus: true,
+            select: function(event, ui) {
+                $('#trader_name').val(ui.item.trader_name);
+                $('.select_pref_div').removeAttr('style');
+                $('.choose_pref_div').html('<a class="btn btn-default btn-xs choose_pref2" trader_cd="' + ui.item.trader_cd + '">選択</a>');
+                $('.choose_pref_div').removeAttr('style');
+                $('.count_area_div').html('<label class="col col-md-4 control-label">対応地域</label><div class="col col-md-8 form-control-static count_area">' + ui.item.count_area + ' 市町村</div>');
+                $('.check_all_area_div').empty();
+                $('.uncheck_all_area_div').empty();
+                $('.choose_area_label').empty();
+                $('.trader_area').empty();
+                return false;
+            }
+        }).data("ui-autocomplete")._renderItem = function(ul, item) {
+            return $("<li>")
+                .append("<a>" + item.trader_name + "</a>")
+                .appendTo(ul);
+        };
+        $(document).on('click', '.choose_pref2', function() {
+            var choose_link = $(this);
+            var div = $(this).parent();
+            var pref_select = $('#TraderAreaPrefId');
+            var pref_id = pref_select.val();
+            if (pref_id == '') {
+                alert('都道府県が選択されていません。');
+                return false;
+            }
+            var prev_html = div.html();
+            pref_select.attr('readonly', true);
+            $('#trader_name').attr('readonly', true);
+            $(this).hide();
+            div.html('<img src="/crm/img/load-22px.gif" id="loading" alt="loading" />');
+            $.ajax({
+                    type: 'POST',
+                    url: '/crm/TraderAreas/get_area_list',
+                    datatype: 'html',
+                    data: {
+                        'trader_cd': choose_link.attr('trader_cd'),
+                        'pref_id': pref_id
+                    }
+                })
+                .done(function(data) {
+                    if (data != '') {
+                        $('.trader_area').empty();
+                        $('.trader_area').append(data);
+                        div.html(prev_html);
+                        pref_select.attr('readonly', false);
+                        $('#trader_name').attr('readonly', false);
+                        $('.trader_area').show();
+                        $('.choose_area_label').html('地域選択');
+                        $('.check_all_area_div').html('<a class="btn btn-primary btn-sm check_all_area" trader_cd="' + choose_link.attr('trader_cd') + '" pref_id="' + pref_id + '">全て登録</a>');
+                        $('.uncheck_all_area_div').html('<a class="btn btn-danger btn-sm uncheck_all_area" trader_cd="' + choose_link.attr('trader_cd') + '" pref_id="' + pref_id + '">全て解除</a>');
+                    } else {
+                        alert('対応地域の取得に失敗しました。');
+                        div.html(prev_html);
+                        pref_select.attr('readonly', false);
+                        $('#trader_name').attr('readonly', false);
+                    }
+                })
+                .fail(function(jqXHR, textStatus) {
+                    alert('対応地域が取得できませんでした。');
+                    div.html(prev_html);
+                    pref_select.attr('readonly', false);
+                    $('#trader_name').attr('readonly', false);
+                });
+            return false;
+        });
+        $(document).on('click', '.check_area', function() {
+            var check_link = $(this);
+            var div = $(this).parent();
+            var pref_select = $('#TraderAreaPrefId');
+            var pref_id = pref_select.val();
+            var old_pref_id = check_link.attr('pref_id');
+            if (pref_id != old_pref_id) {
+                alert('都道府県が変更されています。');
+                return false;
+            }
+            var prev_html = div.html();
+            $(this).hide();
+            div.html('<img src="/crm/img/load-22px.gif" id="loading" alt="loading" />');
+            $.ajax({
+                    type: 'POST',
+                    url: '/crm/TraderAreas/support_area',
+                    data: {
+                        'trader_cd': check_link.attr('trader_cd'),
+                        'pref_id': old_pref_id,
+                        'area_code': check_link.attr('area_code')
+                    }
+                })
+                .done(function(data) {
+                    if (data == '') {
+                        var count_str = $('.count_area').html();
+                        var count = count_str.match(/\d+/);
+                        $('.count_area').html(addFigure(Number(count) + 1) + ' 市町村');
+                        div.html('<a class="btn btn-danger btn-xs uncheck_area" id="TraderArea' + check_link.attr('area_code') + '" trader_cd="' + check_link.attr('trader_cd') + '" pref_id="' + old_pref_id + '" area_code="' + check_link.attr('area_code') + '">解除</a>');
+                    } else {
+                        alert(data);
+                        div.html(prev_html);
+                    }
+                })
+                .fail(function(jqXHR, textStatus) {
+                    alert('対応地域の登録ができませんでした。');
+                    div.html(prev_html);
+                });
+            return false;
+        });
+        $(document).on('click', '.uncheck_area', function() {
+            var uncheck_link = $(this);
+            var div = $(this).parent();
+            var pref_select = $('#TraderAreaPrefId');
+            var pref_id = pref_select.val();
+            var old_pref_id = uncheck_link.attr('pref_id');
+            if (pref_id != old_pref_id) {
+                alert('都道府県が変更されています。');
+                return false;
+            }
+            var prev_html = div.html();
+            $(this).hide();
+            div.html('<img src="/crm/img/load-22px.gif" id="loading" alt="loading" />');
+            $.ajax({
+                    type: 'POST',
+                    url: '/crm/TraderAreas/unsupport_area',
+                    data: {
+                        'trader_cd': uncheck_link.attr('trader_cd'),
+                        'pref_id': old_pref_id,
+                        'area_code': uncheck_link.attr('area_code')
+                    }
+                })
+                .done(function(data) {
+                    if (data == '') {
+                        var count_str = $('.count_area').html();
+                        var count = count_str.match(/\d+/);
+                        $('.count_area').html(addFigure(Number(count) - 1) + ' 市町村');
+                        div.html('<a class="btn btn-primary btn-xs check_area" id="TraderArea' + uncheck_link.attr('area_code') + '" trader_cd="' + uncheck_link.attr('trader_cd') + '" pref_id="' + old_pref_id + '" area_code="' + uncheck_link.attr('area_code') + '">登録</a>');
+                    } else {
+                        alert(data);
+                        div.html(prev_html);
+                    }
+                })
+                .fail(function(jqXHR, textStatus) {
+                    alert('対応地域の解除ができませんでした。');
+                    div.html(prev_html);
+                });
+            return false;
+        });
+        $(document).on('click', '.check_all_area', function() {
+            var check_link = $(this);
+            var div = $(this).parent();
+            var pref_select = $('#TraderAreaPrefId');
+            var pref_id = pref_select.val();
+            var old_pref_id = check_link.attr('pref_id');
+            if (pref_id != old_pref_id) {
+                alert('都道府県が変更されています。');
+                return false;
+            }
+            if (confirm('一括登録してもよいですか？')) {
+                var prev_html = div.html();
+                $(this).hide();
+                div.html('<img src="/crm/img/load-30px.gif" id="loading" alt="loading" />');
+                $.ajax({
+                        type: 'POST',
+                        url: '/crm/TraderAreas/support_all_area',
+                        data: {
+                            'trader_cd': check_link.attr('trader_cd'),
+                            'pref_id': old_pref_id
+                        }
+                    })
+                    .done(function(data) {
+                        if (data != '') {
+                            var json = $.parseJSON(data);
+                            $('.trader_area').empty();
+                            $('.trader_area').append(json.trader_area_list);
+                            $('.trader_area').show();
+                            $('.count_area').html(json.trader_area_count + ' 市町村');
+                            div.html('<a class="btn btn-success btn-sm check_all_area" trader_cd="' + check_link.attr('trader_cd') + '" pref_id="' + old_pref_id + '">登録済</a>');
+                            $('.uncheck_all_area_div').html('<a class="btn btn-danger btn-sm uncheck_all_area" trader_cd="' + check_link.attr('trader_cd') + '" pref_id="' + old_pref_id + '">全て解除</a>');
+                        } else {
+                            alert('対応地域の登録に失敗しました');
+                            div.html(prev_html);
+                        }
+                    })
+                    .fail(function(jqXHR, textStatus) {
+                        alert('対応地域の登録ができませんでした。');
+                        div.html(prev_html);
+                    });
+                return false;
+            } else {
+                return false;
+            }
+        });
+        $(document).on('click', '.uncheck_all_area', function() {
+            var uncheck_link = $(this);
+            var div = $(this).parent();
+            var pref_select = $('#TraderAreaPrefId');
+            var pref_id = pref_select.val();
+            var old_pref_id = uncheck_link.attr('pref_id');
+            if (pref_id != old_pref_id) {
+                alert('都道府県が変更されています。');
+                return false;
+            }
+            if (confirm('一括解除してもよいですか？')) {
+                var prev_html = div.html();
+                $(this).hide();
+                div.html('<img src="/crm/img/load-30px.gif" id="loading" alt="loading" />');
+                $.ajax({
+                        type: 'POST',
+                        url: '/crm/TraderAreas/unsupport_all_area',
+                        data: {
+                            'trader_cd': uncheck_link.attr('trader_cd'),
+                            'pref_id': old_pref_id
+                        }
+                    })
+                    .done(function(data) {
+                        if (data != '') {
+                            var json = $.parseJSON(data);
+                            $('.trader_area').empty();
+                            $('.trader_area').append(json.trader_area_list);
+                            $('.trader_area').show();
+                            $('.count_area').html(json.trader_area_count + ' 市町村');
+                            div.html('<a class="btn btn-success btn-sm uncheck_all_area" trader_cd="' + uncheck_link.attr('trader_cd') + '" pref_id="' + old_pref_id + '">解除済</a>');
+                            $('.check_all_area_div').html('<a class="btn btn-primary btn-sm check_all_area" trader_cd="' + uncheck_link.attr('trader_cd') + '" pref_id="' + old_pref_id + '">全て登録</a>');
+                        } else {
+                            alert('対応地域の解除に失敗しました');
+                            div.html(prev_html);
+                        }
+                    })
+                    .fail(function(jqXHR, textStatus) {
+                        alert('対応地域の解除ができませんでした。');
+                        div.html(prev_html);
+                    });
+                return false;
+            } else {
+                return false;
+            }
+        });
+    });
+    //]]>
+</script>
+<script type="text/javascript" src="/crm/js/default.js"></script>
+<script type="text/javascript" src="/crm/js/prefSelectExtension.js"></script>
+<script type="text/javascript" src="../js/HolidayChk.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.datepicker-ja.js"></script>
+</head>
+<body style="padding-top: 65px;">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <strong><a class="navbar-brand" href="/crm/">社内システム</a></strong>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/crm/Inquiries">問合管理</a> </li>
+                <li>
+                    <a href="/crm/AgreementOrders">成約管理</a> </li>
+                <li>
+                    <a href="/crm/Trades">引取管理</a> </li>
+                <li>
+                    <a href="/crm/Documents">書類管理</a> </li>
+                <li>
+                    <a href="/crm/Payments">振込管理</a> </li>
+                <li>
+                    <a href="/crm/Sales">請求管理</a> </li>
+                <li>
+                    <a href="/crm/Refunds">還付金管理</a> </li>
+                <li>
+                    <a href="/crm/ScrapAuctions">SmartA管理</a> </li>
+                <li>
+                    <a href="/crm/Complaints">クレーム</a> </li>
+                <!-- id33：費用入力管理 -->
+                <li>
+                    <a href="/crm/Statistics/summary" target="_blank">統計分析</a> </li>
+                <!-- id34：監査データ閲覧機能 -->
+                <li>
+                    <a href="/crm/Audits/summary" target="_blank">監査</a> </li>
+                <li>
+                    <a href="/crm/Tasks" target="_blank">タスク<span class="badge" style="background-color:#FFF; color:#FE0000; font-size:85%; margin-left:5px;">9</span></a> </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理　<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/crm/Traders" target="_blank">業者管理</a></li>
+                        <!-- id40：写真撮影スタッフ編集機能 -->
+                        <li class="divider"></li>
+                        <li><a href="/crm/Photographers" target="_blank">写真撮影スタッフ</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/crm/Messages" target="_blank">社内伝言</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/crm/MailMagazines" target="_blank">メールマガジン</a></li>
+                        <!-- 法定費用管理 -->
+                        <li class="divider"></li>
+                        <li><a href="/crm/VehicleInspections" target="_blank">法定費用管理</a></li>
+                        <!-- 祝日管理 -->
+                        <!-- id35：進捗目標値設定機能 -->
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <table style="margin-top: 5px; margin-bottom: 5px;">
+                        <tr>
+                            <td><strong><small class="text-muted">当日</small></strong></td>
+                            <td><strong><small class="text-muted">：</small></strong></td>
+                            <td><strong><small class="text-muted">問合数　</small></strong></td>
+                            <td class="text-right"><strong><small class="text-muted">135　</small></strong></td>
+                            <td><strong><small class="text-muted">受注数　</small></strong></td>
+                            <td class="text-right"><strong><small class="text-muted">27　</small></strong></td>
+                            <td><strong><small class="text-muted">受注率　</small></strong></td>
+                            <td class="text-right">
+                                <strong>
+                <small class="text-muted text-right">
+                20 %					</small>
+                </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><small class="text-muted">月間</small></strong></td>
+                            <td><strong><small class="text-muted">：</small></strong></td>
+                            <td><strong><small class="text-muted">問合数　</small></strong></td>
+                            <td><strong><small class="text-muted">5667　</small></strong></td>
+                            <td><strong><small class="text-muted">受注数　</small></strong></td>
+                            <td><strong><small class="text-muted">1335　</small></strong></td>
+                            <td><strong><small class="text-muted">受注率　</small></strong></td>
+                            <td>
+                                <strong>
+                <small class="text-muted">
+                23.56 %					</small>
+                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <p class="navbar-text"></p>
+                </li>
+                <li>
+                    <p class="navbar-text">2018年4月17日 (火)</p>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                阿部 薫					<b class="caret"></b>
+            </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/crm/Employees/cp">パスワード変更</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/crm/Employees/logout">ログアウト</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="container">
+    <div id="header"></div>
+    <div id="content">
+        <!-- app/View/Traders/area.ctp -->
+        <div class="col col-md-12">
+            <blockquote>業者対応地域設定</blockquote>
+        </div>
+        <div class="col-md-9">
+            <div class="col col-md-12 well form-horizontal">
+                <fieldset>
+                    <div class="row">
+                        <div class="form-group col col-md-4"><label for="trader_name" class="col col-md-4 control-label">業者名</label>
+                            <div class="col col-md-8"><input name="data[TraderArea][name]" maxlength="100" id="trader_name" class="form-control input-sm" value="株式会社 ケーエー車輌" placeholder="部分一致" type="text" /></div>
+                        </div>
+                        <div class="form-group ool col-md-4"></div>
+                        <div class="form-group col col-md-4 count_area_div"><label class="col col-md-4 control-label">対応地域</label>
+                            <div class="col col-md-8 form-control-static count_area">23 市町村</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col col-md-4 select_pref_div" style="visibility: visible;"><label for="TraderAreaPrefId" class="col col-md-4 control-label">都道府県</label>
+                            <div class="col col-md-8">
+                            <select name="data[TraderArea][pref_id]" class="form-control input-sm pref_name" id="TraderAreaPrefId">
+                            <option value="">----------</option>
+                            <optgroup label="北海道">
+                            <option value="1">北海道</option>
+                            </optgroup>
+                            <optgroup label="東北">
+                            <option value="2">青森県</option>
+                            <option value="3">岩手県</option>
+                            <option value="4">宮城県</option>
+                            <option value="5">秋田県</option>
+                            <option value="6">山形県</option>
+                            <option value="7">福島県</option>
+                            </optgroup>
+                            <optgroup label="関東">
+                            <option value="8">茨城県</option>
+                            <option value="9">栃木県</option>
+                            <option value="10">群馬県</option>
+                            <option value="11">埼玉県</option>
+                            <option value="12">千葉県</option>
+                            <option value="13">東京都</option>
+                            <option value="14">神奈川県</option>
+                            </optgroup>
+                            <optgroup label="北陸">
+                            <option value="15">新潟県</option>
+                            <option value="16">富山県</option>
+                            <option value="17">石川県</option>
+                            <option value="18">福井県</option>
+                            </optgroup>
+                            <optgroup label="中部">
+                            <option value="19">山梨県</option>
+                            <option value="20">長野県</option>
+                            <option value="21">岐阜県</option>
+                            <option value="22">静岡県</option>
+                            <option value="23">愛知県</option>
+                            </optgroup>
+                            <optgroup label="関西">
+                            <option value="24">三重県</option>
+                            <option value="25">滋賀県</option>
+                            <option value="26">京都府</option>
+                            <option value="27">大阪府</option>
+                            <option value="28">兵庫県</option>
+                            <option value="29">奈良県</option>
+                            <option value="30">和歌山県</option>
+                            </optgroup>
+                            <optgroup label="中国">
+                            <option value="31">鳥取県</option>
+                            <option value="32">島根県</option>
+                            <option value="33">岡山県</option>
+                            <option value="34">広島県</option>
+                            <option value="35">山口県</option>
+                            </optgroup>
+                            <optgroup label="四国">
+                            <option value="36">徳島県</option>
+                            <option value="37">香川県</option>
+                            <option value="38">愛媛県</option>
+                            <option value="39">高知県</option>
+                            </optgroup>
+                            <optgroup label="九州">
+                            <option value="40">福岡県</option>
+                            <option value="41">佐賀県</option>
+                            <option value="42">長崎県</option>
+                            <option value="43">熊本県</option>
+                            <option value="44">大分県</option>
+                            <option value="45">宮崎県</option>
+                            <option value="46">鹿児島県</option>
+                            </optgroup>
+                            <optgroup label="沖縄">
+                            <option value="47">沖縄県</option>
+                            </optgroup>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group col col-md-4 form-control-static choose_pref_div">
+                            <a href="/crm/traders/area/3" class="btn btn-default btn-xs choose_pref2" trader_cd="T00120025">選択</a></div>
+                        <div class="form-group col col-md-4">
+                            <label class="col col-md-4 control-label choose_area_label">地域選択</label>
+                            <div class="col col-md-3 form-control-static text-center check_all_area_div">
+                                <a class="btn btn-primary btn-sm check_all_area" trader_cd="" pref_id="">全て登録</a>
+                            </div>
+                            <div class="col col-md-3 col-md-offset-2 form-control-static text-center uncheck_all_area_div">
+                                <a class="btn btn-danger btn-sm uncheck_all_area" trader_cd="" pref_id="">全て解除</a>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="col col-md-12">
+            <table id="buttonWrapper" class="table table-striped table-bordered table-condensed trader_area_list" style="table-layout: fixed;">
+                <tbody class="trader_area">
+                    <tr>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                    </tr>
+                    <tr>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                    </tr>
+                    <tr>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                    </tr>
+                    <tr>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                    </tr>
+                    <tr>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                    </tr>
+                    <tr>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                    </tr>
+                    <tr>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                        <td>北海道 <a class="btn btn-default btn-xs choose_pref">選択</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="footer">
+        <p></p>
+    </div>
+</div>
+
+</body>
+<script>
+    $('#buttonWrapper a').click(function(){
+        $(this).toggleClass('unchoise');
+    });
+    $(document).ready(function(){
+        $(".check_all_area").on("click", function() {
+            $("#buttonWrapper a").removeClass("choise");
+            $(this).closest("#content").find("#buttonWrapper a").addClass("unchoise");
+            $(this).closest(".form-group").find(".uncheck_all_area_div a").removeClass("choiseactive");
+            $('.check_all_area').prop( "disabled", true ).addClass("choiseactive");
+            $(this).removeClass("unchoiseactive");
+        });
+        $(".uncheck_all_area").on("click", function() {
+            $("#buttonWrapper a").removeClass("unchoise");
+            $(this).closest(".form-group").find(".check_all_area_div a").removeClass("choiseactive");
+            $('.uncheck_all_area').prop( "disabled", true ).addClass("choiseactive");
+            $(this).removeClass("unchoiseactive");
+        });
+    });
+</script>
+</html>

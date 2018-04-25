@@ -1,0 +1,392 @@
+@charset "utf-8";
+
+#shop-content {
+	width:540px;
+	padding:10px;
+}
+
+#shop-content2 {
+	float:right;
+	width:480px;
+	padding:10px 110px 10px 10px;
+	background-color:#ffffff;
+}
+
+.guide h3 {
+	margin:6px 0px;
+	padding:3px 6px;
+	border-left:5px solid #afcd00;
+	border-bottom:1px solid #afcd00;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.guide h4 {
+	margin:0px 10px;
+	padding:3px 6px;
+	background-color:#e7e7e7;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.guide h5 {
+	margin:0px 10px;
+	padding:3px 12px;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.guide p {
+	padding:5px 30px 10px;
+}
+
+.guide table {
+	margin-left:15px;
+	margin-bottom:20px;
+}
+
+.guide table th{ 
+	padding:6px;
+	border:1px solid #cccccc;
+	background-color:#f3f3f3;
+	text-align:center;
+}
+
+.guide table td{ 
+	padding:6px;
+	border:1px solid #cccccc;
+	text-align:left;
+}
+
+.guide table td ul{ 
+	padding:10px 15px;
+}
+
+.guide ol li {
+	margin: 0 48px 6px;
+	list-style:outside decimal;
+}
+
+.regist {
+	
+}
+
+.regist h4 {
+	margin:5px 0px 10px;
+	border-bottom:1px solid #000000;
+	color:#000000;
+	font-weight:bold;
+}
+
+.cartflow {
+	width:530px;
+	margin:10px 5px 20px;
+}
+
+.cartflow td {
+	padding:1px 3px;
+}
+
+.cartflow th.cartflow-now {
+	border:1px solid #a7b269;
+	background-color:#AFCD00;
+	color:#ffffff;
+	text-align:center;
+}
+
+.cartflow th.cartflow-none {
+	border:1px solid #dddddd;
+	background-color:#cccccc;
+	color:#333333;
+	text-align:center;
+}
+
+.cartflow th.cartflow-fin {
+	border:1px solid #ffffff;
+	background-color:#ffffff;
+	color:#666666;
+	text-align:center;
+}
+
+.price-info {
+	padding:5px 0 20px 0;
+	text-align:left;
+}
+
+#error-disp p {
+	padding:20px;
+	text-align:center;
+	color:#ff0000;
+	font-weight:bold;
+}
+
+#error-disp form {
+	padding-top:10px;
+	text-align:center;
+}
+
+.step-jump {
+	padding:10px 0;
+	text-align:center;
+}
+
+.step-jump2 {
+	width:100%;
+	margin:20px auto 0px;
+	text-align:center;
+}
+
+.step-jump3 {
+	padding-top:10px;
+	text-align:right;
+}
+
+.step-jump4 {
+	width:510px;
+	padding:0 10px 10px 20px;
+}
+
+.step-jump4 .clear {
+	clear:both;
+}
+
+.step-jump4 li {
+	float:left;
+	width:160px;
+	padding-right:10px;
+}
+
+#step-left {
+	margin:0px;
+	padding:10px 0px;
+	text-align: left;
+	vertical-align: top;
+}
+
+#step-right {
+	margin:0px;
+	padding:10px 10px 10px 0px;
+	text-align: right;
+	vertical-align: top;
+}
+
+#muryou {
+	width:100%;
+	text-align:right;
+}
+
+#cartlist-table {
+	border-collapse:collapse;
+	border:1px solid #cccccc;
+}
+
+#cartlist-table thead th {
+	padding:3px 0px;
+	border:1px solid #cccccc;
+	background-color:#dddddd;
+	text-align:center;
+	white-space:nowrap;
+}
+
+#cartlist-table tbody td {
+	padding:3px 3px 3px 0px;
+	border:1px solid #cccccc;
+	text-align:right;
+}
+
+#cartlist-table tbody .ctr,
+#cartlist-table tbody #deleteform td,
+#cartlist-table tbody #addform td {
+	padding:3px 0px;
+	border:1px solid #cccccc;
+	text-align:center;
+}
+
+
+#cartlist-table tfoot th {
+	padding:3px 12px 3px 0px;
+	border:1px solid #cccccc;
+	background-color:#dddddd;
+	text-align:right;
+}
+
+#cartlist-table tfoot td {
+	padding:3px 3px 3px 0px;
+	border:1px solid #cccccc;
+	text-align:right;
+}
+
+#cartcheck {
+	border-collapse:collapse;
+	border:1px solid #cccccc;
+}
+
+#cartcheck thead th {
+	padding:3px 0px;
+	border:1px solid #cccccc;
+	background-color:#dddddd;
+	
+	text-align:center;
+	white-space:nowrap;
+}
+
+#cartcheck tbody td {
+	padding:3px 3px 3px 0px;
+	border:1px solid #cccccc;
+	text-align:right;
+}
+
+#cartcheck tbody .ctr,
+#cartcheck tbody #deleteform td,
+#cartcheck tbody #addform td {
+	padding:3px 0px;
+	border:1px solid #cccccc;
+	text-align:center;
+}
+
+#cartcheck tfoot th {
+	padding:3px 12px 3px 0px;
+	border:1px solid #cccccc;
+	background-color:#dddddd;
+	text-align:right;
+}
+
+#cartcheck tfoot td {
+	padding:3px 3px 3px 0px;
+	border:1px solid #cccccc;
+	text-align:right;
+}
+
+#cart-pw {
+	padding:10px 20px;
+}
+
+#cart-pw fieldset {
+	margin-bottom:20px;
+}
+
+#cart-pw table {
+	margin:6px;
+}
+
+#cart-pw table td{
+	padding:3px 6px;
+}
+
+#cart-pw #pw-input {
+	border-collapse:collapse;
+	border-spacing:0px;
+}
+
+#cart-pw #pw-input td {
+	padding:2px 5px;
+	border:1px solid #dddddd;
+}
+
+#cart-pw table td label {
+	text-align:right;
+}
+
+.input-data {
+	margin:12px 0px 30px;
+	border-collapse:collapse;
+	border:1px solid #cccccc;
+}
+
+.check-data {
+	margin:6px 0px 12px;
+	border-collapse:collapse;
+	border:1px solid #cccccc;
+}
+
+.input-data th,
+.check-data th {
+	padding:6px 12px;
+	border:1px solid #cccccc;
+	background-color:#dddddd;
+	text-align:left;
+}
+
+.input-data td,
+.check-data td {
+	padding:6px 12px;
+	border:1px solid #cccccc;
+	text-align:left;
+}
+
+.regist input#label1,.regist input#label2,.regist input#label13,.regist input#label14,.regist input#label15,.regist input#label16,
+.regist input#address1,.regist input#address2,
+.regist input#deli_address1,.regist input#deli_address2,
+.regist textarea#remark {
+	ime-mode:active;
+}
+
+.regist input#zip1,.regist input#zip2,
+.regist input#tel1,.regist input#tel2,.regist input#tel3, 
+.regist input#deli_zip1,.regist input#deli_zip2,
+.regist input#deli_tel1,.regist input#deli_tel2,.regist input#deli_tel3, 
+.regist input#email,.regist input#oldmail,.regist input#newmail,.regist input#chkmail,
+.regist input#pwd,.regist input#npwd,.regist input#npwd2 {
+	ime-mode:disabled;
+}
+
+#next-credit form {
+	padding:10px 20px 20px;
+	line-height:150%;
+}
+
+#next-credit input {
+	margin:20px;
+}
+
+#fin-cart {
+	padding:10px 20px 20px;
+	line-height:150%;
+}
+
+#cart-pw #pw-input2 {
+	width:100%;
+	border-collapse:collapse;
+	border-spacing:0px;
+}
+
+#cart-pw #pw-input2 th {
+	padding:2px 5px;
+	border:1px solid #dddddd;
+	text-align:right;
+	white-space:nowrap;
+}
+
+#cart-pw #pw-input2 td {
+	width:100%;
+	padding:2px 5px;
+	border:1px solid #dddddd;
+}
+
+#cart-pw #pw-input2 td label {
+	text-align:right;
+}
+
+input.next {
+	font-size: 100%;
+	background-color: #FF3300;
+	color: #FFF;
+	text-decoration: none;
+	border-top: 1px solid #cecece;
+	border-bottom: 2px solid #4a4a4a;
+	border-left: 1px solid #cecece;
+	border-right: 2px solid #4a4a4a;
+}
+
+input.next:hover {
+	border-bottom: 1px solid #cecece;
+	border-top: 2px solid #4a4a4a;
+	border-right: 1px solid #cecece;
+	border-left: 2px solid #4a4a4a;
+}
+
+input.next2 {
+	font-size: 100%;
+	font-weight: bold;
+	color:#2D2D2D;
+}

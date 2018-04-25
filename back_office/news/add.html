@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="ja">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>(10)社内システム:ユーザ管理</title>
+<link src="../favicon.ico" type="image/x-icon" rel="icon" />
+<link src="../favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.10.3.custom.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/colorbox.css" />
+<link rel="stylesheet" type="text/css" href="../css/teisei.css" />
+<link rel="stylesheet" type="text/css" href="../css/default.css" />
+<link rel="stylesheet" type="text/css" href="../css/body.css" />
+<link rel="stylesheet" type="text/css" href="../css/autocomplete.css" />
+<link rel="stylesheet" type="text/css" href="../css/prefSelectExtension.css" />
+<link rel="stylesheet" type="text/css" href="../css/mileageSelectExtension.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.4.1/hint.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/darktooltip.min.css" />
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.datepicker-ja.js"></script>
+<script type="text/javascript" src="../js/HolidayChk.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="../js/prefSelectExtension.js"></script>
+<script type="text/javascript" src="../js/clicktocall.js"></script>
+</head>
+<body style="padding-top: 65px;">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid clr">
+    <div class="navbar-header"> <strong><a class="navbar-brand" href="/crm/">スマオク管理システム</a></strong> </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li> <a href="../inquiries">問合管理</a> </li>
+        <li> <a href="../order">出品管理</a> </li>
+        <li> <a href="../assess">査定員管理</a></li>
+        <li> <a href="../trader">業者管理</a> </li>
+        <li> <a href="../user">ユーザー管理</a> </li>
+        <li> <a href="../news/">新着情報</a> </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <p class="navbar-text"></p>
+        </li>
+        <li>
+          <p class="navbar-text">2018年2月6日 (火)</p>
+        </li>
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 阿部 薫 <b class="caret"></b> </a>
+          <ul class="dropdown-menu">
+            <li><a href="/crm/Employees/cp">パスワード変更</a></li>
+            <li class="divider"></li>
+            <li><a href="/crm/Employees/logout">ログアウト</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="container">
+    <div id="header"></div>
+    <div id="content">
+        <div class="col col-md-12">
+            <blockquote>新着情報</blockquote>
+        </div>
+        <div class="col col-md-12">
+            <form action="/crm/Traders/edit/1" class="well form-horizontal" id="TraderEditForm" method="post" accept-charset="utf-8">
+                <div style="display:none;">
+                    <input type="hidden" name="_method" value="POST" />
+                </div>
+                <input type="hidden" name="data[Trader][trader_cd]" id="trader_cd" value="T00120003" />
+                <fieldset>
+                    <div class="form-group col col-md-12">
+                        <label class="col col-md-2 control-label">表示日付</label>
+                        <div class="col col-md-5 slectwday">
+                             <div class="col-md-3">
+                                <select name="" class="form-control col-md-10 slectw80">
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                  </select> <span>年</span>
+                              </div>
+                              <div class="col-md-3">
+                                  <select name="" class="form-control col-md-10 slectw80">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                  </select> <span>月</span>
+                              </div>
+                              <div class="col-md-3">
+                                  <select name="" class="form-control col-md-10 slectw80">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                  </select> <span>日</span>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="form-group col col-md-12 required">
+                        <label for="TraderTraderName" class="col col-md-2 control-label">ジャンル</label>
+                        <div class="col col-md-5 required">
+                            <select name="" class="form-control">
+                            <option value="">----------</option>
+                            <option value="2">お知らせ</option>
+                            <option value="3">Media</option>
+                            <option value="4">Press</option>
+                            <option value="5">キャンペーン</option>
+                            <option value="6">お詫び</option>
+                            <option value="7">お詫びとお知らせ</option>
+                            <option value="8">休暇案内</option>
+                            <option value="9">ご挨拶</option>
+                           
+                          </select>
+                        </div>
+                    </div>
+                    <div class="form-group col col-md-12">
+                        <label for="TraderTraderKanaName" class="col col-md-2 control-label">タイトル</label>
+                        <div class="col col-md-5">
+                            <input name="data[Trader][trader_kana_name]" class="form-control hiragana" maxLength="100" type="text" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group col col-md-12">
+                        <label for="TraderZipCode" class="col col-md-2 control-label">本文</label>
+                        <div class="col col-md-5">
+                            <textarea class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col col-md-12">
+                        <label for="" class="col col-md-2 control-label">表示/非表示</label>
+                        <div class="col col-md-5">
+                            <label class="radio-inline" for="InquiryRunnable">
+                              <input type="radio" name="data[Inquiry][runnable]" id="InquiryRunnable" value="" />
+                              有</label>
+                            <label class="radio-inline" for="InquiryRunnable1">
+                              <input type="radio" name="data[Inquiry][runnable]" id="InquiryRunnable1" value="1" />
+                              無</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col col-md-10 col-md-offset-2">
+                        <input class="btn btn-default" id="submit" type="submit" value="上記の内容で登録する" />
+                        <input class="btn btn-default" style="margin-left:15px" id="submit" type="submit" value="プレビューを見る" />
+                    </div>
+                    <div class="col col-md-10 col-md-offset-2" style="margin-top:15px">
+                        <input class="btn btn-default" id="submit" type="submit" value="リスト画面へ戻る" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <p></p>
+    </div>
+</div>
+</body>
+</html>

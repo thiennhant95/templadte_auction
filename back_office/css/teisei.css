@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+#ui-datepicker-div  .ui-datepicker ,
+DIV#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+	font-size: 73%;
+}
+
+/*--年月表示セレクト部分--*/
+DIV.ui-datepicker-title select,
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+	color: black;
+	font-weight: normal;
+	width: 40%;
+	height: 16px;
+}
+/*---日付文字サイズ---*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	font-size:12px;
+	padding: 0.1em;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+	font-size:13px;
+	padding: 0.1em;
+}
+
+/*--休日の文字色---*/
+.date-holiday .ui-state-default {
+	color: red;
+}
+.date-saturday .ui-state-default {
+	color: blue;
+}
+
+
+/*------------*/
+/* 次へボタン
+*/
+#ui-datepicker-div SPAN.ui-icon.ui-icon-circle-triangle-e{
+    background-image: url("/crm/img/c_right.png");
+	position:relative;
+	left:14px;/* ポジション修正*/
+}
+#ui-datepicker-div .ui-widget-header .ui-icon {
+    background-image: url("/crm/img/c_left.png");
+}
+
+.ui-icon-circle-triangle-e {
+    background-position: -48px -192px;
+    background-position: 0px 0px;
+}
+.ui-icon-circle-triangle-w {
+    background-position: -80px -192px;
+    background-position: 0px 0px;
+}

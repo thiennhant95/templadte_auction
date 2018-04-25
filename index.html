@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta charset="UTF-8" />
+<title><?= SEO_TITLE;?></title>
+<meta name="description" content="<?= SEO_DESCRIPTION;?>" />
+<meta name="keywords" content="<?= SEO_KEYWORDS;?>" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="format-detection" content="telephone=no" />
+<!-- CSS -->
+<link href="./css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/base.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/top.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+<!-- JS -->
+<script type="text/javascript">window.jQuery || document.write('<script src="./js/jquery.min.js"><\/script>')</script><!-- 上記CDNダウン時のフォールバック -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><!-- jQueryの読み込み -->
+</head>
+<body id="wrapper">
+<header>
+    <div class="main clearfix">
+        <h1 class="dishd_pc">{$cname('SEO_H1')}</h1>
+        <div class="flexrowbetween hdtop">
+            <div class="logo"><a href="./"><img src="./common_img/logo.jpg" alt="スマオク ユーザ直取引プロ査定員査定"></a></div>
+            <div class="txt_right clearfix">
+                <p class="text_top fz11 text_right lhnm">株式会社あいうえお様（T00246911）<br><a href="./">ログアウト</a></p>
+                <p class="text_red text_bold lhnm">本日の締切：14:00 <span>（残り時間：2時間34分12秒）</span></p>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul class="flexrowbetween">
+            <li class="dishd_sp"><a href="tel:06-7670-7744"><img src="./common_img/icon_tel.jpg" alt="tel:06-7670-7744" class="icon"></a></li>
+            <li class="dishd_sp"><a href="./contact/"><img src="./common_img/icon_mail.jpg" alt="CONTACT" class="icon"></a></li>
+            <li class="navpc">
+                <p class="menu dishd_sp"><img src="./common_img/icon_menu.jpg" alt="MENU" class="icon"></p>
+                <div class="navsub">
+                    <ul class="flexrowbetween submenu">
+                        <li class="ahover active"><a href="./">TOP</a></li>
+                        <li class="ahover"><a href="./item/">オークション車両一覧</a></li>
+                        <li class="ahover"><a href="./favorite/">お気に入り一覧</a></li>
+                        <li class="ahover"><a href="./open/">入札中一覧</a></li>
+                        <li class="ahover"><a href="./close/">落札済一覧</a></li>
+                        <li class="ahover"><a href="./fail/">敗札一覧</a></li>
+                        <li class="ahover"><a href="./setting/">各種設定</a></li>
+                        <li class="ahover"><a href="./documents/">各種書類</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="popuplogin">
+    <div class="popcompl">
+        <div class="messagepop">
+            <p class="close_compl iconclose"><i class="fa fa-times-circle"></i></p>
+            <form method="post" id="new_message" action="/messages">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <th>パスワード</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" class="form-control"></td>
+                    </tr>
+                </table>
+                <ul>
+                    <li class="completion"><a href="#">ログイン</a></li>
+                    <li class="forgetpass"><a href="./forgetpass/">パスワードをお忘れの場合、コチラ</a></li>
+                    <li class="btncom"><a href="./company/">新規会員登録</a></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Top-->
+<div class="clearfix main_page">
+    <section class="slidetop">
+        <article>
+            <h2>2月29日14時〆切！！人気車種ランキング</h2>
+            <div class="flexrowbetween">
+                <div class="boxcar boxcar_red">
+                    <p class="lable posred"><img src="./images/lable_red.png" alt="1"></p>
+                    <p class="img"><a href="./item/detail.html"><img src="./images/img1.jpg" alt="ホンダ ライフ"></a></p>
+                    <div class="txtinfo">
+                        <h3 class="text_bold"><a href="./item/detail.html">ホンダ ライフ</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>3,000km</td>
+                            </tr>
+                        </table>
+                        <h4 class="text_center text_bold fontyu">現在の最高入札額</h4>
+                        <h5 class="text_center text_bold fontyu">￥1,055,000-</h5>
+                    </div>
+                </div>
+                <div class="boxcar boxcar_gre">
+                    <p class="lable posred"><img src="./images/lable_gre.png" alt="2"></p>
+                    <p class="img"><a href="./item/detail.html"><img src="./images/img2.jpg" alt="ダイハツ アトレーワゴン"></a></p>
+                    <div class="txtinfo">
+                        <h3 class="text_bold"><a href="./item/detail.html">ダイハツ アトレーワゴン</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>3,000km</td>
+                            </tr>
+                        </table>
+                        <h4 class="text_center text_bold fontyu">現在の最高入札額</h4>
+                        <h5 class="text_center text_bold fontyu">￥1,055,000-</h5>
+                    </div>
+                </div>
+                <div class="boxcar boxcar_blue">
+                    <p class="lable posred"><img src="./images/lable_blue.png" alt="3"></p>
+                    <p class="img"><a href="./item/detail.html"><img src="./images/img3.jpg" alt="ダイハツ アトレーワゴン"></a></p>
+                    <div class="txtinfo">
+                        <h3 class="text_bold"><a href="./item/detail.html">ダイハツ アトレーワゴン</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>3,000km</td>
+                            </tr>
+                        </table>
+                        <h4 class="text_center text_bold fontyu">現在の最高入札額</h4>
+                        <h5 class="text_center text_bold fontyu">￥1,055,000-</h5>
+                    </div>
+                </div>
+                <div class="boxcar boxcar_white">
+                    <p class="lable posred"><img src="./images/lable_white.png" alt="4"></p>
+                    <p class="img"><a href="./item/detail.html"><img src="./images/img4.jpg" alt="ダイハツ アトレーワゴン"></a></p>
+                    <div class="txtinfo">
+                        <h3 class="text_bold"><a href="./item/detail.html">ダイハツ アトレーワゴン</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>3,000km</td>
+                            </tr>
+                        </table>
+                        <h4 class="text_center text_bold fontyu">現在の最高入札額</h4>
+                        <h5 class="text_center text_bold fontyu">￥1,055,000-</h5>
+                    </div>
+                </div>
+                <div class="boxcar boxcar_white2">
+                    <p class="lable posred"><img src="./images/lable_white2.png" alt="5"></p>
+                    <p class="img"><a href="./item/detail.html"><img src="./images/img5.jpg" alt="ダイハツ アトレーワゴン"></a></p>
+                    <div class="txtinfo">
+                        <h3 class="text_bold"><a href="./item/detail.html">ダイハツ アトレーワゴン</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>3,000km</td>
+                            </tr>
+                        </table>
+                        <h4 class="text_center text_bold fontyu">現在の最高入札額</h4>
+                        <h5 class="text_center text_bold fontyu">￥1,055,000-</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="btnslidetop">
+                <p class="btnpage btnhover"><a href="#" class="fontyu text_bold clpage text_center">6位以降の入札ランキング一覧はコチラ</a></p>
+            </div>
+            <div class="btnslidetop">
+                <p class="btnpage btnhover"><a href="#" class="fontyu text_bold clpage text_center">入札可能な車両一覧はこちら</a></p>
+            </div>
+        </article>
+    </section>
+    <section class="topnews">
+        <article>
+            <div class="boxnews">
+                <div class="titbox">
+                    <h3><span class="fontyu text_bold">新着情報</span>News&Topics</h3>
+                    <p><a href="./news/" class="fontyu text_bold">バックナンバー</a></p>
+                </div>
+                <div class="info infonew">
+                    <dl class="bgblue">
+                        <dt>2018.02.16 <span>お知らせ</span></dt>
+                        <dd><a href="./news/">あいうえおかきくけこ</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>2018.02.16 <span>お知らせ</span></dt>
+                        <dd><a href="./news/">あいうえおかきくけこ</a></dd>
+                    </dl>
+                    <dl class="bgblue">
+                        <dt>2018.02.16 <span>お知らせ</span></dt>
+                        <dd><a href="./news/">あいうえおかきくけこ</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>2018.02.16 <span>お知らせ</span></dt>
+                        <dd><a href="./news/">あいうえおかきくけこ</a></dd>
+                    </dl>
+                    <dl class="bgblue">
+                        <dt>2018.02.16 <span>お知らせ</span></dt>
+                        <dd><a href="./news/">あいうえおかきくけこ</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="boxnews">
+                <div class="titbox">
+                    <h3><span class="fontyu text_bold">各種手数料</span></h3>
+                </div>
+                <div class="info infotable">
+                    <table>
+                        <tr>
+                            <td>■出品手数料</td>
+                            <td>無料会員</td>
+                            <td class="text_right">0円/有料会員</td>
+                            <td class="text_right">0円</td>
+                        </tr>
+                        <tr>
+                            <td>■成約手数料</td>
+                            <td>無料会員</td>
+                            <td class="text_right">4,000円/有料会員</td>
+                            <td class="text_right">4,0000円</td>
+                        </tr>
+                        <tr>
+                            <td>■落札手数料</td>
+                            <td>無料会員</td>
+                            <td class="text_right">11,000円/有料会員</td>
+                            <td class="text_right">6,000円</td>
+                        </tr>
+                    </table>
+                    <p><span class="txt_red">※</span> 有料会員への登録は月額10,000円となります<br><span class="txt_red">※</span> 価格は全て?税別?表記です</p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="topboxtel">
+        <article>
+            <div class="boxtel">
+                <h3 class="text_bold fontyu text_center">サービス内容に関してご不明点がございましたら、<span>お電話または<a href="mailto:">メール</a>にてお問合わせください。</span></h3>
+                <div class="flexrowbetween">
+                    <h4><img src="./common_img/logobox.jpg" alt="スマオク"></h4>
+                    <div class="tel">
+                        <p class="dis_pc lh00"><img src="./common_img/txttel.jpg" alt="tel:06-7670-7744"></p>
+                        <p class="dis_sp lh00"><a href="tel:06-7670-7744"><img src="./common_img/txttel.jpg" alt="tel:06-7670-7744"></a></p>
+                        <p class="txt">営業時間：9：00～18：00(月～金)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <p><span class="txt_red">※</span> スマオク！は全て●●●●●。</p>
+                <p><span class="txt_red">※</span> 落札代金には、別途消費税が加算されます。</p>
+                <p><span class="txt_red">※</span> 車検付き車両の場合、自動車税は抹消以外月割負担となります。</p>
+                <p><span class="txt_red">※</span> 弊社ではユーザー様、業者様の声をリアルタイムで反映できる様、規約の改定等も行って参りますので、規約・マニュアルページにてご確認頂きます様お願い致します。</p>
+            </div>
+        </article>
+    </section>
+</div>
+<!-- end main -->
+
+<footer>
+    <div class="main">
+        <div class="infoft flexrowbetween">
+            <div class="logoft"><a href="./"><img src="./common_img/logoft.png" alt="RAXUS CREATE INC."></a></div>
+            <div class="navft">
+                <h3 class="fontyu clpage text_bold">株式会社ラグザス・クリエイト</h3>
+                <ul>
+                    <li><a href="http://raxus-create.co.jp/index.html" target="_blank">コーポレートサイト<span>|</span></a></li>
+                    <li><a href="./">お問い合わせ<span>|</span></a></li>
+                    <li><a href="./images/kiyaku.pdf" target="_blank">利用規約<span>|</span></a></li>
+                    <li><a href="https://www.carnext-auction.com/about/" target="_blank">スマオク！とは</a></li>
+                    <li><a href="https://www.carnext-auction.com/About/anti_social" target="_blank">反社会的勢力排除宣言<span>|</span></a></li>
+                    <li><a href="https://www.carnext-auction.com/About/law" target="_blank">特定商取引法の表示</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page_top_cont noselect">
+            <div class="page_top">
+              <div class="to_top">
+                  <a href="#wrapper"><img src="./common_img/pagetop.png" alt="PAGE UP"></a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p class="text_center fontyu">Copyright(C) RAXUS CREATE INC.</p>
+    </div>
+</footer>
+<!-- End Footer-->
+<script src="./js/common.js" type="text/javascript"></script>
+<script src="./js/tile.js" type="text/javascript"></script>
+<script src="./js/jquery.colorbox.js" type="text/javascript"></script>
+<script type="text/javascript">s
+    $(window).load(function() {
+        var viewportWidth = $(window).width();
+        if (viewportWidth < 769) {
+            $(".slidetop .txtinfo").tile(2);
+            $(".slidetop .txtinfo h3").tile(2);
+        } else {
+            $(".slidetop .txtinfo").tile(5);
+            $(".slidetop .txtinfo h3").tile(5);
+        }
+    });
+</script>
+</body>
+</html>

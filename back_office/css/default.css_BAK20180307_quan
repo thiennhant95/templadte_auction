@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+.ime-mode-inactive {
+	ime-mode: inactive;
+}
+.ime-disabled {
+	ime-mode: disabled;
+}
+.search {
+	border: 1px solid;
+}
+.search_title {
+	border: 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.search_value {
+	border: 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding: 8px;
+}
+th a.asc {
+	color: #d9534f;
+}
+th a.desc {
+	color: #d9534f;
+}
+th a.asc:after {
+	content: ' ↓';
+}
+th a.desc:after {
+	content: ' ↑';
+}
+.alert {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+.form-horizontal div.checkbox {
+	padding-top: 4px;
+}
+
+span.tooltip-box {
+	color: #337ab7;
+	text-align: center;
+	padding: 2px 5px;
+	background-color: #d9edf7;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+/*進捗画面管理用*/
+.progresses_edit_table{border:solid 1px #cccccc;}
+.progresses_edit_table th{background:#fcf8e3;border:solid 1px #cccccc;padding:2px;text-align: center;line-height:1.2;font-size:62px;}
+.progresses_edit_table td{background:#ffffff;border:solid 1px #cccccc;padding:2px;text-align:right;line-height:1.2;font-size:60px;}
+.good_stamp{margin-right: 5px;}
+
+#month_title_box{
+	text-align: center;
+}
+#control_month{
+	font-size:28px;
+}
+#move_month_box{
+	width:760px;
+	height:1.5em;
+	margin: 0px auto 10px;
+}
+#move_month_past{
+	float: left;
+	color:#337ab7;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#move_month_past:hover{
+	text-decoration: none;
+}
+#move_month_future{
+	float: right;
+	color:#337ab7;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#move_month_future:hover{
+	text-decoration: none;
+}
+.progresses_edit_table{
+	width:790px;
+	margin: 0px auto 10px;
+	font-size:16px;
+	font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","Osaka",Verdana,"ＭＳ Ｐゴシック","MS P Gothic",Arial,Helvetica,sans-serif;
+}
+.progresses_edit_table th{
+	width:190px;
+	height:55px;
+	font-size:16px;
+	padding:10px 0px;
+}
+.progresses_edit_table td{
+	width:300px;
+	height:55px;
+	font-size:16px;
+	padding:10px 5px;
+}
+.progresses_edit_table .value_box{
+	display: inline-block;
+	width:100px;
+	text-align: right;
+}
+.progresses_edit_table .InputFormBox{
+	position: relative;
+	margin-right: 5px;
+}
+.button_box{
+	position: relative;
+	width:790px;
+	margin: 0px auto 20px;
+	padding:2px 1px;
+	text-align: right;
+}
+.KPIFormButton{
+	display:inline-block;
+	font-size:1.5em;
+	padding:4px 15px;
+	vertical-align:middle;
+}
+
+#enquete_box .block_on{
+	display: block;
+}
+#enquete_box .block_off{
+	display: none;
+}
+
+/* タグにstyleを記載するのを極力減らすためのclass */
+.PL0{
+	padding-left:0px;
+}
+.PT0{
+	padding-top:0px;
+}
+.PR0{
+	padding-right:0px;
+}
+.PB0{
+	padding-bottom:0px;
+}
+.PA0{
+	padding:0px;
+}
+.P6_0{
+	padding:6px 0px;
+}
+
+.ML0{
+	margin-left:0px;
+}
+.MT0{
+	margin-top:0px;
+}
+.MR0{
+	margin-right:0px;
+}
+.MB0{
+	margin-bottom:0px;
+}
+.MA0{
+	margin:0px;
+}
+
+.M6_0{
+	margin:6px 0px;
+}
+
+
+/*　詳細ページ用　テーブルスタイル*/
+
+table.info_table tbody tr{
+	height:41px;
+}
+
+table.info_table tbody tr td{
+	vertical-align:middle;
+}
+
+@media print{
+	#enquete_box .a_box{
+		margin-bottom: 10px;
+	}
+	#enquete_box .q_tab{
+		display: none;
+	}
+	#enquete_box .block_on{
+		display: block;
+	}
+	#enquete_box .block_off{
+		display: block;
+	}
+}
+
+.cake-sql-log {
+
+    background-color:#FFF;
+}
+.cake-sql-log:after {
+    content : "";
+    display : block;
+    height : 0;
+    clear : both;
+}
+
+.cake-sql-log:hover {
+    top:auto;
+    bottom:0;
+}
+.cake-sql-log td {
+    padding:3px;
+    border:1px solid #999;
+    background-color:#EEE;
+    color:#000;
+}

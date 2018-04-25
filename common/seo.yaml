@@ -1,0 +1,41 @@
+default:
+  # TOP兼デフォルト用
+  title: SEOタイトル
+  description: SEOディスクリプション
+  keywords: SEOキーワード
+  h1: test      h1
+
+seo:
+    # newslistなどディレクトリ名に重複がある場合は順番に注意
+  - page: news
+    title: 新着情報
+    description: 新着情報
+    keywords: 新着情報
+    h1: 新着情報
+
+  - page: contact
+    title: お問い合わせ
+    description: お問い合わせ
+    keywords: お問い合わせ
+    h1: お問い合わせ
+
+    # 詳細ページは/?id=などのパラメータで判断
+  - page: shopping/?pid=
+    title: 商品詳細
+    description: 商品詳細
+    keywords: 商品詳細
+    h1: 商品詳細
+
+    # 一覧ページディレクトリ名で判断
+  - page: shopping
+    title: 商品一覧
+    description: 商品一覧
+    keywords: 商品一覧
+    h1: 商品一覧
+
+    # コピペ用
+  # - page:
+  #   title:
+  #   description:
+  #   keywords:
+  #   h1:

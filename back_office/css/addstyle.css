@@ -1,0 +1,28 @@
+@charset "utf-8";
+.spec1 {
+	margin-bottom: 2%;
+	padding-bottom: 2%;
+	border-bottom: 1px solid #dadada;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+.spec1 .w70 {
+	display: inline;
+	width: 30%;
+}
+.lightbox_photo {
+	position: relative;
+	display: inline-block;
+}
+
+.lightbox_photo:after {
+	display: block;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+    background: url(../order/images/icon_zoom.png) no-repeat center top;
+    content: "";
+}

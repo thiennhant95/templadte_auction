@@ -1,0 +1,506 @@
+@charset "utf-8";
+
+.ime-mode-inactive {
+	ime-mode: inactive;
+}
+.ime-disabled {
+	ime-mode: disabled;
+}
+.search {
+	border: 1px solid;
+}
+.search_title {
+	border: 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.search_value {
+	border: 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding: 8px;
+}
+th a.asc {
+	color: #d9534f;
+}
+th a.desc {
+	color: #d9534f;
+}
+th a.asc:after {
+	content: ' ↓';
+}
+th a.desc:after {
+	content: ' ↑';
+}
+.alert {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+.form-horizontal div.checkbox {
+	padding-top: 4px;
+}
+
+span.tooltip-box {
+	color: #337ab7;
+	text-align: center;
+	padding: 2px 5px;
+	background-color: #d9edf7;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+/*進捗画面管理用*/
+.progresses_edit_table{border:solid 1px #cccccc;}
+.progresses_edit_table th{background:#fcf8e3;border:solid 1px #cccccc;padding:2px;text-align: center;line-height:1.2;font-size:62px;}
+.progresses_edit_table td{background:#ffffff;border:solid 1px #cccccc;padding:2px;text-align:right;line-height:1.2;font-size:60px;}
+.good_stamp{margin-right: 5px;}
+
+#month_title_box{
+	text-align: center;
+}
+#control_month{
+	font-size:28px;
+}
+#move_month_box{
+	width:760px;
+	height:1.5em;
+	margin: 0px auto 10px;
+}
+#move_month_past{
+	float: left;
+	color:#337ab7;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#move_month_past:hover{
+	text-decoration: none;
+}
+#move_month_future{
+	float: right;
+	color:#337ab7;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#move_month_future:hover{
+	text-decoration: none;
+}
+.progresses_edit_table{
+	width:790px;
+	margin: 0px auto 10px;
+	font-size:16px;
+	font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","Osaka",Verdana,"ＭＳ Ｐゴシック","MS P Gothic",Arial,Helvetica,sans-serif;
+}
+.progresses_edit_table th{
+	width:190px;
+	height:55px;
+	font-size:16px;
+	padding:10px 0px;
+}
+.progresses_edit_table td{
+	width:300px;
+	height:55px;
+	font-size:16px;
+	padding:10px 5px;
+}
+.progresses_edit_table .value_box{
+	display: inline-block;
+	width:100px;
+	text-align: right;
+}
+.progresses_edit_table .InputFormBox{
+	position: relative;
+	margin-right: 5px;
+}
+.button_box{
+	position: relative;
+	width:790px;
+	margin: 0px auto 20px;
+	padding:2px 1px;
+	text-align: right;
+}
+.KPIFormButton{
+	display:inline-block;
+	font-size:1.5em;
+	padding:4px 15px;
+	vertical-align:middle;
+}
+
+#enquete_box .block_on{
+	display: block;
+}
+#enquete_box .block_off{
+	display: none;
+}
+
+/* タグにstyleを記載するのを極力減らすためのclass */
+.PL0{
+	padding-left:0px;
+}
+.PT0{
+	padding-top:0px;
+}
+.PR0{
+	padding-right:0px;
+}
+.PB0{
+	padding-bottom:0px;
+}
+.PA0{
+	padding:0px;
+}
+.P6_0{
+	padding:6px 0px;
+}
+
+.ML0{
+	margin-left:0px;
+}
+.MT0{
+	margin-top:0px;
+}
+.MR0{
+	margin-right:0px;
+}
+.MB0{
+	margin-bottom:0px;
+}
+.MA0{
+	margin:0px;
+}
+
+.M6_0{
+	margin:6px 0px;
+}
+
+
+/*　詳細ページ用　テーブルスタイル*/
+
+table.info_table tbody tr{
+	height:41px;
+}
+
+table.info_table tbody tr td{
+	vertical-align:middle;
+}
+
+@media print{
+	#enquete_box .a_box{
+		margin-bottom: 10px;
+	}
+	#enquete_box .q_tab{
+		display: none;
+	}
+	#enquete_box .block_on{
+		display: block;
+	}
+	#enquete_box .block_off{
+		display: block;
+	}
+}
+
+.cake-sql-log {
+
+    background-color:#FFF;
+}
+.cake-sql-log:after {
+    content : "";
+    display : block;
+    height : 0;
+    clear : both;
+}
+
+.cake-sql-log:hover {
+    top:auto;
+    bottom:0;
+}
+.cake-sql-log td {
+    padding:3px;
+    border:1px solid #999;
+    background-color:#EEE;
+    color:#000;
+}
+.container-fluid.clr {
+    background: #00008B;
+}
+.navbar-inverse .navbar-brand {
+    color: #fff; 
+}
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    color: #9d9d9d;
+}
+.navbar-inverse .navbar-nav li a {
+    color: #fff;
+}
+.navbar-inverse .navbar-nav li a:hover {
+    color: #9d9d9d;
+}
+.navbar-text {
+    color: #fff !important;
+}
+.dropdown-menu li a {
+	color: #333 !important;
+}
+.selectmulti ul{
+    margin: 0;
+    padding: 0;
+}
+.selectmulti li{
+    list-style: none;
+}
+
+.selectmulti li.selected{
+    background: #ccc;
+}
+.selectmulti li.optgroup{
+    margin: 10px 0;
+}
+.selectmulti li.optgroup ul{
+    margin: 10px 0;
+}
+.selectmulti label{
+    padding-left: 0 !important;
+    margin-bottom: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+.selectmulti .label {
+    display: inline;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+    color: #000;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin-bottom: 0;
+}
+
+.selectmulti input[type="checkbox"] {
+    vertical-align: -0.2em;
+    display: none;
+}
+
+.ui-dialog{
+    width: 500px !important;
+    height: 500px !important;
+}
+
+
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popup .selectmulti {
+    visibility: hidden;
+    width: 400px;
+    overflow-y: scroll;
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 62%;
+    margin-left: -80px;
+    color: #000;
+}
+
+.popup .selectmulti button{
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 30px;
+    line-height: 30px;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.spanclpink{
+    background: #f22;
+    color: #fff;
+    padding: 3px 8px;
+}
+.imgresize{
+    width: 50%;
+}
+
+.slectw80{
+    width: 80%;
+}
+
+.slectwday span{
+    padding-top: 9px;
+    display: block;
+}
+
+
+input[type="checkbox"], input[type="radio"]{
+    vertical-align: -0.2em !important;
+}
+.modal-dialog{
+    margin: 100px auto;
+}
+.modal-body{
+    height: 400px;
+}
+#file-upload{
+    display: none;
+}
+.custom-file-upload{
+    position: relative;
+}
+
+.modal-body input, .modal-body select{
+    width: 100%;
+    border: 1px solid #eee;
+    height: 40px;
+    padding: 10px;
+    position: absolute;
+    left: 5%;
+    bottom: 5px;
+    width: 90%;
+    z-index: 9999;
+}
+
+.modal-title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-body select{
+    position: absolute;
+    bottom: 50px;
+}
+
+.modal-content .close{
+    top: 15px;
+    right: 10px;
+    position: absolute;
+}
+
+.custom-file-upload{
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+}
+.custom-file-upload:after{
+    content: "";
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    border: 3px dashed #000;
+    border-radius: 50%;
+    background: #fff url(../../common_img/icon_plus.png) center / 38px no-repeat;
+    opacity: .07;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover:after{
+    opacity: .1;
+}
+#live-chat2 table{
+    width: 100%;
+}
+#live-chat2 tr{
+    border-bottom: 1px solid #ccc;
+}
+#live-chat2 th,#live-chat2 td{
+    padding: 10px 0;
+    vertical-align: top;
+}
+#live-chat2 th:first-child{
+    width: 30%;
+}
+#live-chat2 td:last-child{
+    text-align: right;
+    width: 25%;
+}
+
+.choose_pref{
+    text-shadow: none;
+    float: right;
+    border: none;
+    background: #245580;
+    color: #fff;
+}
+
+.unchoise{
+    background: #c12e2a;
+    color: #fff;
+    border: none;
+}
+
+.unchoise:hover{
+    background: #c12e2a;
+    color: #fff;
+}
+
+.choiseactive{
+    background-color: #2db201 !important;
+    background: #2db201 !important;
+    background-image: #2db201 !important;
+    border: 1px solid #2db201;
+}
+
+.unchoiseactive{
+    background-color: #2db201 !important;
+    background: #2db201 !important;
+    background-image: #2db201 !important;
+    border: 1px solid #2db201;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

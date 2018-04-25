@@ -1,0 +1,1716 @@
+<!--
+<?php //require_once("./news.php");?>
+<?php //require_once("./common/include_disp.php"); ?>
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta charset="UTF-8" />
+<title><?= SEO_TITLE;?></title>
+<meta name="description" content="<?= SEO_DESCRIPTION;?>" />
+<meta name="keywords" content="<?= SEO_KEYWORDS;?>" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="format-detection" content="telephone=no" />
+<!-- CSS -->
+<link href="../css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/base.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/top.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/content.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+<!-- JS -->
+<script type="text/javascript">window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script><!-- 上記CDNダウン時のフォールバック -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><!-- jQueryの読み込み -->
+<!-- <?php //echo DispBeforeHeadEndTag();?> -->
+</head>
+<body id="wrapper">
+<!--<?php //echo DispHeader();?>-->
+<header>
+    <div class="main clearfix">
+        <h1 class="dishd_pc">{$cname('SEO_H1')}</h1>
+        <div class="flexrowbetween hdtop">
+            <div class="logo"><a href="../"><img src="../common_img/logo.jpg" alt="スマオク ユーザ直取引プロ査定員査定"></a></div>
+            <div class="txt_right clearfix">
+                <p class="text_top fz11 text_right lhnm">株式会社あいうえお様（T00246911）<br><a href="../">ログアウト</a></p>
+                <p class="text_red text_bold lhnm">本日の締切：14:00 <span>（残り時間：2時間34分12秒）</span></p>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul class="flexrowbetween">
+            <li class="dishd_sp"><a href="tel:06-7670-7744"><img src="../common_img/icon_tel.jpg" alt="tel:06-7670-7744" class="icon"></a></li>
+            <li class="dishd_sp"><a href="../contact/"><img src="../common_img/icon_mail.jpg" alt="CONTACT" class="icon"></a></li>
+            <li class="navpc">
+                <p class="menu dishd_sp"><img src="../common_img/icon_menu.jpg" alt="MENU" class="icon"></p>
+                <div class="navsub">
+                    <ul class="flexrowbetween submenu">
+                        <li class="ahover"><a href="../">TOP</a></li>
+                        <li class="ahover active"><a href="../item/">オークション車両一覧</a></li>
+                        <li class="ahover"><a href="../favorite/">お気に入り一覧</a></li>
+                        <li class="ahover"><a href="../open/">入札中一覧</a></li>
+                        <li class="ahover"><a href="../close/">落札済一覧</a></li>
+                        <li class="ahover"><a href="../fail/">敗札一覧</a></li>
+                        <li class="ahover"><a href="../setting/">各種設定</a></li>
+                        <li class="ahover"><a href="../documents/">各種書類</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- End Top-->
+<section>
+    <article>
+        <ul class="crumb">
+            <li class="home"><a href="../">TOP</a></li>
+            <li>オークション車両一覧</li>
+        </ul>
+        <div class="titline clearfix">
+            <h3 class="fontyu">オークション車両一覧</h3>
+            <div class="select">
+                <select name="" id="">
+                    <option disabled="" selected="" value="">▼以下の条件で並べ替える</option>
+                    <option value='人気順'>人気順</option>
+                    <option value='新着順'>新着順</option>
+                    <option value='締切間近順'>締切間近順</option>
+                    <option value='最高入札価格が高い順'>最高入札価格が高い順</option>
+                    <option value='最高入札価格が低い順'>最高入札価格が低い順</option>
+                    <option value='最低希望価格が高い順'>最低希望価格が高い順</option>
+                    <option value='最低希望価格が低い順'>最低希望価格が低い順</option>
+                    <option value='お気に入りが多い順'>お気に入りが多い順</option>
+                    <option value='お気に入りが少ない順'>お気に入りが少ない順</option>
+                    <option value='閲覧数が多い順'>閲覧数が多い順</option>
+                    <option value='閲覧数が少ない順'>閲覧数が少ない順</option>
+                </select>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="sidebar">
+                <h3 class="ac_title">～ 車両検索 ～<span>Search Cars</span></h3>
+                <div class="ac_con textbox">
+                    <p class="bodernone">フリーワード</p>
+                    <div class="flexrowbetween">
+                        <input type="text" class="w60per">
+                        <input type="button" value="検索">
+                    </div>
+                    <p>メーカー</p>
+                    <select name="" id="">
+                        <option disabled="" selected="" value=""></option>
+                        <option value=''></option>
+                    </select>
+                    <p>車種</p>
+                    <select name="" id="">
+                        <option disabled="" selected="" value=""></option>
+                        <option value=''></option>
+                    </select>
+                    <p>年式</p>
+                    <div class="flexrowbetween">
+                        <select name="" id="">
+                            <option disabled="" selected="" value=""></option>
+                            <option value=''></option>
+                        </select>～
+                        <select name="" id="">
+                            <option disabled="" selected="" value=""></option>
+                            <option value=''></option>
+                        </select>
+                    </div>
+                    <p>走行距離</p>
+                    <div class="flexrowbetween">
+                        <select name="" id="">
+                            <option disabled="" selected="" value=""></option>
+                            <option value=''></option>
+                        </select>～
+                        <select name="" id="">
+                            <option disabled="" selected="" value=""></option>
+                            <option value=''></option>
+                        </select>
+                    </div>
+                    <p>車両保管場所</p>
+                    <select name="" id="">
+                        <option disabled="" selected="" value=""></option>
+                        <option value=''></option>
+                    </select>
+                    <p>出品番号</p>
+                    <select name="" id="">
+                        <option disabled="" selected="" value=""></option>
+                        <option value=''></option>
+                    </select>
+                    <p>入札締切日</p>
+                    <div class="flexrowbetween">
+                        <input type="text">～
+                        <input type="text">
+                    </div>
+                    <p>車検残</p>
+                    <ul class="flexrowbetween">
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>全て</span></label></li>
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>あり</span></label></li>
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>なし</span></label></li>
+                    </ul>
+                    <p>排気量（CC）</p>
+                    <div class="flexrowbetween">
+                        <input type="text">～
+                        <input type="text">
+                    </div>
+                    <p>シフト</p>
+                    <ul class="flexrowbetween">
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>全て</span></label></li>
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>AT</span></label></li>
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>MT</span></label></li>
+                    </ul>
+                    <p>駆動方式</p>
+                    <ul class="flexrowbetween">
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>全て</span></label></li>
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>2WD</span></label></li>
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>4WD</span></label></li>
+                    </ul>
+                    <p>査定員査定</p>
+                    <ul class="flexrowbetween">
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>全て</span></label></li>
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>あり</span></label></li>
+                        <li><label><input type="radio" value="" id="" name="issue" tabindex="" accesskey=""><span>なし</span></label></li>
+                    </ul>
+                </div>
+                <!-- end textbox -->
+                <div class="btn"><input type="button" value="検索する"></div>
+            </div>
+            <!-- end sidebar -->
+            <div class="content_secon layout6page">
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li>
+                                <input type="button" value="入札金額変更" id="change" class="btnst02">
+                                <div class="posapsolute">
+                                    <div class="popchange">
+                                        <div class="messagepop">
+                                            <p class="close_change iconclose"><i class="fa fa-times-circle"></i></p>
+                                            <form method="post" id="new_message" action="/messages">
+                                                <h3 class="text_center">入札</h3>
+                                                <table>
+                                                    <tr>
+                                                        <th>入札金額</th>
+                                                        <td><input type="text" value="11500"> 円</td>
+                                                    </tr>
+                                                </table>
+                                                <p class="text_center">（※半角で入力）</p>
+                                                <ul>
+                                                    <li class="completion2"><a href="#">確認する</a></li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り済み" class="btnst03"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                <div class="boxitem flexrowbetween boxcol3">
+                    <div class="colimg">
+                        <p class="img lh00"><a href="./detail.html"><img src="./images/imdemo.png" alt="トヨタ アレックス特別仕様車「XS150ワイズセレクション　ナビスペシャル」"></a></p>
+                        <ul class="popularity clearfix">
+                            <li>人気</li>
+                        </ul>
+                    </div>
+                    <div class="coltxt">
+                        <h3 class="fontyu"><a href="./detail.html">トヨタ アレックス特別仕様車「XS150　ワイズセレクション　ナビスペシャル」</a></h3>
+                        <table>
+                            <tr>
+                                <th>年式</th>
+                                <td>平成21年6月</td>
+                            </tr>
+                            <tr>
+                                <th>型式</th>
+                                <td>AB12</td>
+                            </tr>
+                            <tr>
+                                <th>走行距離</th>
+                                <td>12,000km</td>
+                            </tr>
+                            <tr>
+                                <th>排気量</th>
+                                <td>3,000cc</td>
+                            </tr>
+                            <tr>
+                                <th>色</th>
+                                <td>ガンメタリック</td>
+                            </tr>
+                            <tr>
+                                <th>場所</th>
+                                <td>大阪府大阪市浪速区</td>
+                            </tr>
+                            <tr>
+                                <th>出品番号</th>
+                                <td>C1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="coltable">
+                        <table class="sttb01 coltb_style">
+                            <tr>
+                                <th>最高入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                            <tr>
+                                <th>（希望価格</th>
+                                <td>￥1,200,000）</td>
+                            </tr>
+                            <tr>
+                                <th>御社入札価格</th>
+                                <td>￥1,500,000</td>
+                            </tr>
+                        </table>
+                        <ul class="sttb03">
+                            <li><input type="button" value="お気に入り" class="btnst01"></li>
+                            <li><input type="button" value="入札金額変更" class="btnst02"></li>
+                        </ul>
+                        <table class="sttb02 coltb_style">
+                            <tr>
+                                <th>評価点</th>
+                                <td>3.5点</td>
+                            </tr>
+                            <tr>
+                                <th>締切日時</th>
+                                <td>2018/02/26 14:00<span>（残り：9時間12分56秒）</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- end boxitem -->
+                
+                <div class="panagation">
+                    <ul>
+                        <li><a href="#">＜＜</a></li>
+                        <li><a href="#">＜</a></li>
+                        <li class="actice"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">＞</a></li>
+                        <li><a href="#">＞＞</a></li>
+                    </ul>
+                    <p>1～20件／30件</p>
+                </div>
+            </div>
+            <!-- end content_secon -->
+        </div>
+        <!-- end clearfix -->
+    </article>
+</section>
+
+    <!-- <?php //echo DispSide();?> -->
+<!-- end main -->
+
+<!--<?php //echo DispFooter();?>-->
+<footer>
+    <div class="main">
+        <div class="infoft flexrowbetween">
+            <div class="logoft"><a href="../"><img src="../common_img/logoft.png" alt="RAXUS CREATE INC."></a></div>
+            <div class="navft">
+                <h3 class="fontyu clpage text_bold">株式会社ラグザス・クリエイト</h3>
+                <ul>
+                    <li><a href="http://raxus-create.co.jp/index.html" target="_blank">コーポレートサイト<span>|</span></a></li>
+                    <li><a href="../">お問い合わせ<span>|</span></a></li>
+                    <li><a href="../images/kiyaku.pdf" target="_blank">利用規約<span>|</span></a></li>
+                    <li><a href="https://www.carnext-auction.com/about/" target="_blank">スマオク！とは</a></li>
+                    <li><a href="https://www.carnext-auction.com/About/anti_social" target="_blank">反社会的勢力排除宣言<span>|</span></a></li>
+                    <li><a href="https://www.carnext-auction.com/About/law" target="_blank">特定商取引法の表示</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page_top_cont noselect">
+            <div class="page_top">
+              <div class="to_top">
+                  <a href="#wrapper"><img src="../common_img/pagetop.png" alt="PAGE UP"></a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p class="text_center fontyu">Copyright(C) RAXUS CREATE INC.</p>
+    </div>
+</footer>
+<!-- End Footer-->
+<script src="../js/common.js" type="text/javascript"></script>
+<script src="../js/tile.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        var viewportWidth = $(window).width();
+        if (viewportWidth < 769) {
+            $(".sidebar h3").addClass("ac_title");
+            $(".sidebar .textbox").addClass("ac_con");
+        } else {
+            $(".sidebar h3").removeClass("ac_title");
+            $(".sidebar .textbox").removeClass("ac_con");
+        }
+    });
+</script>
+<!--
+<?php //echo DispBeforeBodyEndTag();?>
+<?php //echo DispAccesslog();?>
+-->
+</body>
+</html>

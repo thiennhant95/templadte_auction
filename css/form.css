@@ -1,0 +1,43 @@
+.hissu { background: url(../common_img/hissu.gif) left top no-repeat; background-position: 10px 15px; }
+
+.ninni { background: url(../common_img/ninni.gif) left top no-repeat; background-position: 10px 15px; }
+
+input[type="radio"], input[type="checkbox"] { vertical-align: -0.1em; }
+
+.table_form { width: 100%; color: #4c3f33; margin-bottom: 20px; }
+
+.table_form td, .table_form th { padding: 15px 20px; border: 1px solid #d6cbbb; }
+
+.table_form th { border-bottom-color: #FFF; vertical-align: top; }
+
+.table_form .end th { border-bottom-color: #d6cbbb; }
+
+.table_form th { text-align: left; background-color: #e3dbcf; padding-left: 50px; }
+
+.table_form_w1 { width: 150px; }
+
+.form2col { overflow: hidden; text-align: right; }
+
+.form2col-1 { float: left; width: 48%; }
+
+.form2col-2 { float: right; width: 48%; }
+
+.form_control_sm { width: 130px; }
+
+.form_control { display: block; width: 98%; }
+
+.form_group { margin-bottom: 10px; }
+
+.form2col input { text-align: left; }
+
+#address_search { margin-bottom: 10px; }
+
+#formEnd { text-align: center; }
+
+#formEnd input { display: inline-block; padding: 6px 12px; cursor: pointer; font-weight: bold; }
+
+/* ---IME ON--- */
+.ime_on { ime-mode: active; }
+
+/* ---IME KILL--- */
+.ime_off { ime-mode: desabled; }
